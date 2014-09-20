@@ -71,11 +71,8 @@ ul li ul,ol li ol {
     font-family:arial,sans-serif!important;
     display:block;
     text-decoration:none;
-    font-size:14px;
     font-weight:500;
     color:#f0f0f0;
-    padding:25px 0 20px;
-    margin:0 5px
 }
 
 .center {
@@ -88,21 +85,31 @@ ul li ul,ol li ol {
     background: inherit;
 }
 
-.nav li.active::after {
-	content:"\e072";
-	font-family:"Glyphicons Halflings";
-	line-height:1;
-	display:inline-block;
-	color: white;
-    bottom: -2px;
-    margin-left: -2px;
-    display: block;
-    left: calc(50% - 5px);
-    position: absolute;
-    z-index: 99;
-    -webkit-transform: rotate(-90deg);
-    -webkit-transform-origin: 50% 50%;
+
+@media (min-width: 768px) {
+	.nav li.active::after {
+		content:"\e072";
+		font-family:"Glyphicons Halflings";
+		line-height:1;
+		display:inline-block;
+		color: white;
+	    bottom: -2px;
+	    margin-left: -2px;
+	    display: block;
+	    left: calc(50% - 5px);
+	    position: absolute;
+	    z-index: 99;
+	    -webkit-transform: rotate(-90deg);
+	    -webkit-transform-origin: 50% 50%;
+	}
+
+	.nav li a {
+	    font-size:14px;
+	    padding:25px 0 20px;
+	    margin:0 5px
+	}
 }
+
 
 #logo {
     width:115px;
@@ -148,8 +155,9 @@ ul li ul,ol li ol {
     margin-top:40px;
     font-size:13px;
     padding-top:1px;
+    padding-bottom: 20px;
     color:#f0f0f0;
-    letter-spacing:.1em
+    letter-spacing:.1em;
 }
 
 .footer hr {
