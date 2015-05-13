@@ -1,0 +1,122 @@
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+% \usepackage[margin=0.3in]{geometry}
+\usepackage[scale=0.9,top=1.2cm]{geometry}
+\usepackage{verbatim}
+
+% moderncv theme
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% character encoding
+% \usepackage[utf8]{inputenc}
+
+\makeatletter
+\renewcommand*{\symbol}{{~~~{\rmfamily\textcolor{color1}{\textbullet}}~~~}} 
+\renewcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
+\makeatother
+\renewcommand*{\namefont}{\fontsize{30}{32}\mdseries\upshape}
+
+\AtBeginDocument{\recomputelengths} % required when changes are made to page layout lengths
+% \nopagenumbers{}
+
+% % personal data
+\firstname{Myles}
+\familyname{Scolnick}
+\address{2395 Piedmont Ave.}{Berkeley, CA 94704}
+\mobile{303.250.0788}
+\email{mscolnick@berkeley.edu}
+\homepage{mscolnick.github.io}
+\social[github]{mscolnick}
+
+%----------------------------------------------------------------------------------
+%       CONTENT
+%----------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+\vspace*{-8mm}
+
+\section{EDUCATION}
+
+\cventry{Aug 2012 - Dec 2015}{Double Major: Computer Science \& Applied Mathematics}{\large University of California, Berkeley}{Technical GPA: 3.82/4.0}{}{
+\footnotesize{
+\vspace*{2mm}
+\textbf{Completed Coursework:} Linear Algebra and Differential Equations (54), Advanced Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs (61A),Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory (70), Intro to Digital Electronics (42), Efficient Algorithms and Intractable Problems (170), Intro to Analysis (104), Engineering Entrepreneurship (IEOR190), Artificial Intelligence (188), Engineering Parallel Software (194), Computer Security (161), Operating Systems and System Programming (162), Numerical Analysis (128A) \\
+\textbf{Completed Coursework:} Databases (186), Complex Analysis (185), Intro to the Internet (168)}
+}
+
+\cvline{Programming:}{\small Java, Python, C, C++, HTML/CSS, Javascript, Matlab, Objective C, Bash}
+
+\cvline{Tools:}{\small Git, Vim, Eclipse, Processing, Bootstrap, Hadoop, Xcode, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, \LaTeX{}, jQuery, Ubuntu/Linux, Mac OS, VirtualBox}
+
+%----------------------------------------------------------------------------------
+
+\section{EXPERIENCE}
+
+\cventry{Summer 2015}{Incoming Software Engineer Intern}{Palantir Technologies}{Palo Alto, CA}{}{}
+
+\cventry{Spring 2015}{Part-Time Extern}{Dropbox}{Berkeley, CA}{}{
+\begin{itemize}%
+\item Conducted research on students to develop insights about student technology usage and trends
+\item Acquired great insight into the tech world and furthered developed my research capabilities with real business implications
+\end{itemize}}
+
+\cventry{Summer 2014}{Product Quality Engineer Intern}{Palantir Technologies}{Palo Alto, CA}{}{\normalsize
+\begin{itemize}%
+\item Developed new management tools to deploy a subset of Palantir software with increased reliability and efficiency
+\item Gained large project experience, increased Java/Shell skills, as well as team collaboration and other proficiencies
+\item Created tests plans and implemented back end (BE) automation tests to ensure project stability from code changes
+\end{itemize}}
+
+% \cventry{Summer 2011}{Immunology Intern}{Webb-Warring Lab of Immunology}{University of Colorado, Denver}{}{\normalsize
+% \begin{itemize}%
+% \item Worked with a team to find a cure for Type 1 Diabetes in mice by examining the roles of auto-reactive T-cells in diabetes
+% \item Studied APC's, CD4's, and V-alpha chains (1-19) to developed a correlation between age of mice and beta-islet configuration
+% \item Analyzed gel electrophoresis samples to separate protein solution to determine V-alpha chains present in mice pancreas
+% \end{itemize}}
+
+%----------------------------------------------------------------------------------
+
+\section{PERSONAL PROJECTS}
+
+\cventry{Spring 2015}{Python, Flask, SQLite, Jinja, HTML/CSS/JS}{\href{https://www.ocf.berkeley.edu/~scolnick/StockAnalysis}{Stock Analysis}}{}{}{\normalsize
+\begin{itemize}%
+\item Created a web application (Front/Back End) to provide technical analysis and graphs for searched stocks
+\item Implemented variety of trading indicators such as MFRAMA, RSI, ADX, MACD for technical analysis on quotes
+\item Added external APIs to give more context for a given stock such as current quote, tweets, and interactive graphs
+\end{itemize}}
+
+\cventry{Spring 2014}{Python}{\href{https://github.com/mscolnick/ADX_Cryptocurrency}{ADX Cryptocurrency Trader}}{}{}{\normalsize
+\begin{itemize}%
+\item Built a program to analyze trends in crypto-currency, specifically Dogecoin and Bitcoin, with the ADX technical indicator
+\item Automatically tracked momentum of currency fluctuations to determine prime opportunity to buy and sell currency
+\item Implemented APIs of currency exchanges and digital wallets to configure auto-trading at high velocities
+\end{itemize}}
+
+\cventry{Spring 2013}{Java/Processing}{Dr. Search}{}{}{\normalsize
+\begin{itemize}%
+\item Developed a fully functional cell counter to detect and count the number of cells in a given image or selection of images
+\item Created the ability to run through a folder of images and export an Excel spreadsheet with results of 43 images in 2 seconds
+\item Implemented `blob-detection' and `edge-detected' to locate cells, color cells, and count cells with little to no error 
+\end{itemize}}
+
+%----------------------------------------------------------------------------------
+
+\section{ACTIVITIES}
+
+\cventry{2012 -- present}{MCLA D-1 Student Athlete \& Lead Web Designer}{Cal Men's Club Lacrosse Team}{}{}{\normalsize
+\begin{itemize}%
+\item Headed website for a three-month long campaign by the team that had raised over \$250,000 in funding
+\end{itemize}}
+
+\cventry{Fall 2012 -- present}{Former Vice President/Treasurer \& Scholarship Chair}{Phi Gamma Delta Fraternity}{}{}{\normalsize
+\begin{itemize}%
+\item Oversaw and budgeted \$150,000 and carried out chapter affairs; Promoted scholarship and organized resume workshops
+\end{itemize}}
+
+\cvline{\textbf{Interests}}{\small
+Skiing, Lacrosse, Standup Comedy, Biking
+}
+
+\end{document}
