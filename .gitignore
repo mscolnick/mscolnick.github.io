@@ -46,3 +46,6 @@ Thumbs.db
 *.out
 *.toc
 *.fdb_latexmk
+
+node_modules
+bower_components

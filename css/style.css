@@ -176,7 +176,7 @@ h6 {
   padding-left: 3%;
   font-size: 15px
 }
-h3 span {
+.at-symbol, .location {
   color: #737373;
   font-size: 80%
 }
@@ -199,22 +199,22 @@ table {
 /* social slide */
 
 .google-hover {
-  background-image: url(../images/google-hover.png)
+  background-image: url(../images/social/google-hover.png)
 }
 .linkedin-hover {
-  background-image: url(../images/linkedin-hover.png)
+  background-image: url(../images/social/linkedin-hover.png)
 }
 .skype-hover {
-  background-image: url(../images/skype-hover.png)
+  background-image: url(../images/social/skype-hover.png)
 }
 .github-hover {
-  background-image: url(../images/github-hover.jpg)
+  background-image: url(../images/social/github-hover.jpg)
 }
 .email-hover {
-  background-image: url(../images/email-hover.png)
+  background-image: url(../images/social/email-hover.png)
 }
 .quora-hover {
-  background-image: url(../images/quora-hover.png)
+  background-image: url(../images/social/quora-hover.png)
 }
 .social-slide {
   height: 48px;
@@ -234,18 +234,24 @@ table {
 .proj {
   color: #000
 }
-.proj span {
-  opacity: .6
+.proj .arrow {
+  padding-left: 10px;
+  opacity: .6;
+  font-size: 80%
 }
-.proj:hover span {
+.proj:hover .arrow {
   color: #1e78c7;
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .proj:hover {
   color: #1e78c7;
+  transition: all 0.2s ease;
 }
 .pdf {
   margin-left: -115px;
   box-shadow: 0 1px 1px 1px #000;
+}
+.copy {
+  font-style: italic;
 }

@@ -1,0 +1,30 @@
+React = require('react')
+ContentSection = require('./ContentSection')
+
+SocialItems = [
+  { name: 'google', link: 'https://plus.google.com/u/0/115274414410280581672/posts'}
+  { name: 'email', link: 'mailto:mscolnick@berkeley.edu'}
+  { name: 'linkedin', link: 'https://www.linkedin.com/pub/myles-scolnick/63/86/7b1/'}
+  { name: 'skype', link: 'skype:MylesScolnick?call'}
+  { name: 'github', link: 'https://github.com/mscolnick'}
+  { name: 'quora', link: 'http://www.quora.com/Myles-Scolnick'}
+]
+
+Contact = React.createClass
+  render: ->
+    <ContentSection id='contact' title='Contact'>
+      <div className='col-xs-12 col-sm-6'>
+        <h2>One Way</h2>
+        <ul className='blue'>
+          <li>(303)–250–0788</li>
+          <li>Email: <a href='mailto:mscolnick@berkeley.edu'>mscolnick@berkeley.edu</a></li>
+          <li>2395 Piedmont Ave. Berkeley, CA 94704</li>
+        </ul>
+      </div>
+      <div className='col-xs-12 col-sm-6'>
+        <h2>Another Way</h2>
+        {<a className="#{s.name}-hover social-slide" href={s.link} /> for s in SocialItems}
+      </div>
+    </ContentSection>
+
+module.exports = Contact
