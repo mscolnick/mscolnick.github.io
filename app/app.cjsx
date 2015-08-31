@@ -1,8 +1,6 @@
 React = require('react')
 Body = require('./Body')
 
-render = -> React.renderComponent(
+React.render(
   <Body />,
   document.body)
-
-render()

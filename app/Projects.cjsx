@@ -1,5 +1,6 @@
 React = require('react')
 ContentSection = require('./ContentSection')
+Glyphicon = require('react-bootstrap').Glyphicon
 
 ProjectItems = [
   {
@@ -37,7 +38,7 @@ ProjectItems = [
 Projects = React.createClass
   render: ->
     <ContentSection id='projects' title='Projects'>
-      {<Project data={p} /> for p in ProjectItems}
+      {<Project data={p} key={i} /> for p, i in ProjectItems}
     </ContentSection>
 
 module.exports = Projects
@@ -51,12 +52,12 @@ Project = React.createClass
       <a href={@props.data.url}>
         <h3 className='proj'>
           {@props.data.name}
-          <span className='glyphicon glyphicon-arrow-right arrow' />
+          <Glyphicon glyph='arrow-right' className='arrow' />
         </h3>
       </a>
       <h4>Language: {@props.data.languages}</h4>
       <h6>{@props.data.time}</h6>
       <ul className='blue'>
-        {<li>{d}</li> for d in @props.data.description}
+        {<li key={i}>{d}</li> for d, i in @props.data.description}
       </ul>
     </div>

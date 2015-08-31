@@ -1,16 +1,19 @@
 React = require('react')
 ContentSection = require('./ContentSection')
+ProgressBar = require('react-bootstrap').ProgressBar
+Col = require('react-bootstrap').Col
+Row = require('react-bootstrap').Row
 
-ProgressType = ['', 'progress-bar-success', 'progress-bar-info', 'progress-bar-warning']
+ProgressType = ['success', 'info', 'warning', 'danger']
 TechincalItems = [
-  { name: 'Python', progress: '95'}
-  { name: 'Java', progress: '95'}
-  { name: 'C', progress: '80'}
-  { name: 'HTML/CSS', progress: '90'}
-  { name: 'C++', progress: '40'}
-  { name: 'Matlab', progress: '60'}
-  { name: 'Bash Scripting', progress: '70'}
-  { name: 'Obective-C', progress: '70'}
+  { name: 'Python', progress: 95}
+  { name: 'Java', progress: 95}
+  { name: 'C', progress: 80}
+  { name: 'HTML/CSS', progress: 90}
+  { name: 'C++', progress: 40}
+  { name: 'Matlab', progress: 60}
+  { name: 'Bash Scripting', progress: 70}
+  { name: 'Obective-C', progress: 70}
 ]
 ExperienceItems = [
   {
@@ -32,7 +35,9 @@ ExperienceItems = [
     location: 'Palo Alto, CA'
     position: 'Software Engineer Intern'
     time: 'Summer 2015'
-    description: []
+    description: [
+      'Worked on adding new improvements and features to Palantir\'s <a href="https://www.palantir.com/solutions/trader-oversight/">trader oversight solution</a>'
+      'Developed a new understanding of Postgres Full Text Search, large-scale web applications, build automation tools, and dependency management']
   }
   {
     url: 'https://www.dropbox.com'
@@ -86,22 +91,22 @@ ExperienceItems = [
 Experience = React.createClass
   render: ->
     <ContentSection id='experience' title='Experience'>
-      {<ExperienceSection data={item} /> for item in ExperienceItems}
+      {<ExperienceSection data={item} key={i} /> for item, i in ExperienceItems}
       <br />
-      <div className='row'>
-        <div className='col-xs-12 well'>
+      <Row>
+        <Col xs={12} className='well'>
           <h3>Technical</h3>
-          <div className='row'>
-            {<TechincalSection data={item} progressType={ProgressType[i%ProgressType.length]} /> for item, i in TechincalItems}
-            <div className='col-xs-12'>
+          <Row>
+            {<TechincalSection data={item} progressType={ProgressType[i%ProgressType.length]} key={i} /> for item, i in TechincalItems}
+            <Col xs={12}>
               <em>Tools: </em>Git, Vim, Eclipse, Processing, Bootstrap, Hadoop, Xcode, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, Ubuntu/Linux, OSX, VirtualBox
               <br />
               <em>OS: </em>
               Mac OS, Linux/Ubuntu
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </ContentSection>
 
 module.exports = Experience
@@ -111,13 +116,13 @@ ExperienceSection = React.createClass
     data: React.PropTypes.object.isRequired
 
   render: ->
-    <div className='row'>
-      <div className='col-xs-12 col-md-2 text-center'>
+    <Row>
+      <Col xs={12} md={2} className='text-center'>
         <a href={@props.data.url}>
           <img alt={@props.data.logoName} className='logo' src={'images/companies/' + @props.data.logoName} />
         </a>
-      </div>
-      <div className='col-xs-12 col-md-10'>
+      </Col>
+      <Col xs={12} md={10}>
         <h3>
           {@props.data.name}
           <span className='at-symbol'> @ </span>
@@ -126,10 +131,10 @@ ExperienceSection = React.createClass
         <h4>{@props.data.position}</h4>
         <h6>{@props.data.time}</h6>
         <ul className='blue'>
-          {<li dangerouslySetInnerHTML={{__html: d}} /> for d in @props.data.description}
+          {<li dangerouslySetInnerHTML={{__html: d}} key={i} /> for d, i in @props.data.description}
         </ul>
-      </div>
-    </div>
+      </Col>
+    </Row>
 
 TechincalSection = React.createClass
   props:
@@ -138,11 +143,8 @@ TechincalSection = React.createClass
 
   render: ->
     <div>
-      <div className='col-sm-2 col-xs-12'>{@props.data.name}</div>
-      <div className='col-sm-10 col-xs-12'>
-        <div className='progress'>
-          <div className="progress-bar #{@props.progressType}" role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style={width: "#{@props.data.progress}%"}>
-          </div>
-        </div>
-      </div>
+      <Col xs={12} sm={2}>{@props.data.name}</Col>
+      <Col xs={12} sm={10}>
+        <ProgressBar bsStyle={@props.progressType} now={@props.data.progress} />
+      </Col>
     </div>

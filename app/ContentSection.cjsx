@@ -1,4 +1,6 @@
 React = require('react')
+Col = require('react-bootstrap').Col
+Row = require('react-bootstrap').Row
 
 ContentSection = React.createClass
   props:
@@ -6,11 +8,11 @@ ContentSection = React.createClass
     title: React.PropTypes.string.isRequired
 
   render: ->
-    <div className='row anchor' id={@props.id}>
+    <Row className='anchor' id={@props.id}>
       <h1><span>{@props.title}</span></h1>
-      <div className='col-xs-12'>
+      <Col xs={12}>
         {@props.children}
-      </div>
-    </div>
+      </Col>
+    </Row>
 
 module.exports = ContentSection

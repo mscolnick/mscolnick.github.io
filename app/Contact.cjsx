@@ -1,5 +1,6 @@
 React = require('react')
 ContentSection = require('./ContentSection')
+Col = require('react-bootstrap').Col
 
 SocialItems = [
   { name: 'google', link: 'https://plus.google.com/u/0/115274414410280581672/posts'}
@@ -13,18 +14,18 @@ SocialItems = [
 Contact = React.createClass
   render: ->
     <ContentSection id='contact' title='Contact'>
-      <div className='col-xs-12 col-sm-6'>
+      <Col xs={12} sm={6}>
         <h2>One Way</h2>
         <ul className='blue'>
           <li>(303)–250–0788</li>
           <li>Email: <a href='mailto:mscolnick@berkeley.edu'>mscolnick@berkeley.edu</a></li>
           <li>2395 Piedmont Ave. Berkeley, CA 94704</li>
         </ul>
-      </div>
-      <div className='col-xs-12 col-sm-6'>
+      </Col>
+      <Col xs={12} sm={6}>
         <h2>Another Way</h2>
-        {<a className="#{s.name}-hover social-slide" href={s.link} /> for s in SocialItems}
-      </div>
+        {<a className="#{s.name}-hover social-slide" href={s.link} key={i}/> for s, i in SocialItems}
+      </Col>
     </ContentSection>
 
 module.exports = Contact

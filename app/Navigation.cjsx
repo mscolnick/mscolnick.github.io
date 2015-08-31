@@ -1,27 +1,22 @@
 React = require('react')
+NavItem = require('react-bootstrap').NavItem
 
-Sections = ['About', 'Experience', 'Projects', 'logo', 'Involvement', 'Links', 'Contact']
+Sections = ['About', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
 
-Navbar = React.createClass
+Navigation = React.createClass
   _getLinks: ->
     links = []
-    for section in Sections
-      if section is 'logo'
-        links.push <li> <a className='visible-lg-inline-block' id='logo'></a> </li>
-      else
-        links.push <li> <a href="##{section.toLowerCase()}">{section}</a> </li>
+    for section, i in Sections
+      links.push <NavItem eventKey={i} key={i} href="##{section.toLowerCase()}">{section}</NavItem>
+    links.splice 3, 0, <li key={6}> <a className='visible-lg-inline-block' id='logo'></a> </li>
     links
-    #TODO: add logo to center separately
 
   render: ->
     <div className='navbar navbar-inverse navbar-fixed-top' role='navigation'>
       <div className='container'>
         <div className='navbar-header'>
           <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-            <span className='sr-only'>Toggle navigation</span>
-            <span className='icon-bar'></span>
-            <span className='icon-bar'></span>
-            <span className='icon-bar'></span>
+            {<span className='icon-bar'></span> for i in [0...3]}
           </button>
           <a className='navbar-brand visible-xs-block'>Myles Scolnick</a>
         </div>
@@ -33,4 +28,4 @@ Navbar = React.createClass
       </div>
     </div>
 
-module.exports = Navbar
+module.exports = Navigation

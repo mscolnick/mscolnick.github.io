@@ -25,7 +25,7 @@ ExItems = [
 Extracurricular = React.createClass
   render: ->
     <ContentSection id='involvement' title='Involvement'>
-      {<ExtracurricularItem data={item} /> for item in ExItems}
+      {<ExtracurricularItem data={item} key={i} /> for item, i in ExItems}
     </ContentSection>
 
 module.exports = Extracurricular
@@ -40,6 +40,6 @@ ExtracurricularItem = React.createClass
       <h4>{@props.data.position}</h4>
       <h6>{@props.data.time}</h6>
       <ul className='blue'>
-       {<li>{d}</li> for d in @props.data.description}
+       {<li key={i}>{d}</li> for d, i in @props.data.description}
       </ul>
     </div>

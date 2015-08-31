@@ -1,5 +1,5 @@
 React = require('react')
-Navbar = require('./Navbar')
+Navigation = require('./Navigation')
 Footer = require('./Footer')
 About = require('./About')
 Experience = require('./Experience')
@@ -12,7 +12,7 @@ Body = React.createClass
   render: ->
     <div>
       <div className='container'>
-        <Navbar />
+        <Navigation />
         <div className='content'>
           <About />
           <Experience />
