@@ -8,12 +8,12 @@ ProgressType = ['success', 'info', 'warning', 'danger']
 TechincalItems = [
   { name: 'Python', progress: 95}
   { name: 'Java', progress: 95}
-  { name: 'C', progress: 80}
   { name: 'HTML/CSS', progress: 90}
-  { name: 'C++', progress: 40}
-  { name: 'Matlab', progress: 60}
+  { name: 'Coffeescript/Javascript', progress: 70}
+  { name: 'Swift/Obective-C', progress: 70}
+  { name: 'C', progress: 70}
   { name: 'Bash Scripting', progress: 70}
-  { name: 'Obective-C', progress: 70}
+  { name: 'Matlab', progress: 60}
 ]
 ExperienceItems = [
   {
@@ -47,7 +47,7 @@ ExperienceItems = [
     position: 'Part-Time Extern'
     time: 'Spring 2015'
     description: [
-      'Conducted research on students to develop insights about student technology usage and trends.'
+      'Conducted research on students to develop insights about student technology usage and trends'
       'Acquired great insight into the tech world and furthered developed my research capabilities with real business implications']
   }
   {
@@ -99,7 +99,7 @@ Experience = React.createClass
           <Row>
             {<TechincalSection data={item} progressType={ProgressType[i%ProgressType.length]} key={i} /> for item, i in TechincalItems}
             <Col xs={12}>
-              <em>Tools: </em>Git, Vim, Eclipse, Processing, Bootstrap, Hadoop, Xcode, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, Ubuntu/Linux, OSX, VirtualBox
+              <em>Tools: </em>Git, Vim, Eclipse, AWS, Processing, Bootstrap, Hadoop, Xcode, Twilio, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, VirtualBox
               <br />
               <em>OS: </em>
               Mac OS, Linux/Ubuntu

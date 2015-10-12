@@ -4,6 +4,16 @@ Glyphicon = require('react-bootstrap').Glyphicon
 
 ProjectItems = [
   {
+    url: 'http://mscolnick.github.io/DatalessSite/'
+    name: 'Dataless'
+    languages: 'Python, Flask, Twilio, Android/Java, AWS EC2'
+    time: 'Fall 2015'
+    description: [
+      'Built an application on Android to get remote information and internet access without using data and only using SMS'
+      'Created a protocol with SMS to simulate network packets capable of handling dropped packets and out of order packets'
+      'Won <b>Best Hack at Berkeley</b> from FreeVentures and <b>Best use of AWS</b> from Amazon at <a href="http://www.calhacks.io/">Cal Hacks 2.0']
+  }
+  {
     url: 'https://github.com/mscolnick/StockAnalysis'
     name: 'Stock Analysis'
     languages: 'Python, Flask, SQLite, Jinja, HTML/CSS/JS'
@@ -58,6 +68,6 @@ Project = React.createClass
       <h4>Language: {@props.data.languages}</h4>
       <h6>{@props.data.time}</h6>
       <ul className='blue'>
-        {<li key={i}>{d}</li> for d, i in @props.data.description}
+        {<li dangerouslySetInnerHTML={{__html: d}} key={i} /> for d, i in @props.data.description}
       </ul>
     </div>
