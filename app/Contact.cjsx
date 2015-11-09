@@ -3,12 +3,13 @@ ContentSection = require('./ContentSection')
 Col = require('react-bootstrap').Col
 
 SocialItems = [
-  { name: 'google', link: 'https://plus.google.com/u/0/115274414410280581672/posts'}
   { name: 'email', link: 'mailto:mscolnick@berkeley.edu'}
   { name: 'linkedin', link: 'https://www.linkedin.com/pub/myles-scolnick/63/86/7b1/'}
-  { name: 'skype', link: 'skype:MylesScolnick?call'}
   { name: 'github', link: 'https://github.com/mscolnick'}
   { name: 'quora', link: 'http://www.quora.com/Myles-Scolnick'}
+  { name: 'twitter', link: 'https://twitter.com/TheMylesFiles'}
+  { name: 'skype', link: 'skype:MylesScolnick?call'}
+  { name: 'google', link: 'https://plus.google.com/u/0/115274414410280581672/posts'}
 ]
 
 Contact = React.createClass
