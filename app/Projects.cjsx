@@ -4,7 +4,7 @@ Glyphicon = require('react-bootstrap').Glyphicon
 
 ProjectItems = [
   {
-    url: 'http://mscolnick.github.io/DatalessSite/'
+    url: 'https://datalessapp.github.io/'
     name: 'Dataless'
     languages: 'Python, Flask, Twilio, Android/Java, AWS EC2'
     time: 'Fall 2015'
