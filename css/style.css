@@ -216,6 +216,9 @@ table {
 .quora-hover {
   background-image: url(../images/social/quora-hover.png)
 }
+.twitter-hover {
+  background-image: url(../images/social/twitter-hover.png)
+}
 .social-slide {
   height: 48px;
   width: 48px;
