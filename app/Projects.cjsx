@@ -4,6 +4,16 @@ Glyphicon = require('react-bootstrap').Glyphicon
 
 ProjectItems = [
   {
+    url: 'http://mscolnick.github.io/resources/radius-report.pdf'
+    name: 'NAICS Classifier'
+    languages: 'Python, NLTK'
+    time: 'Fall 2015'
+    description: [
+      'Built a natural language model to algorithmically determine the best North American Industry Classification System (NAICS) code for a given small business'
+      'Received second in the Radius Collider Competition (through UC Berkeley\'s SCET)'
+      'Incorporated several techniques including text cleaning, data augmentation, TF-IDF, wordnet, neural embeddings and cross-validation to improve accuracy']
+  }
+  {
     url: 'https://datalessapp.github.io/'
     name: 'Dataless'
     languages: 'Python, Flask, Twilio, Android/Java, AWS EC2'
