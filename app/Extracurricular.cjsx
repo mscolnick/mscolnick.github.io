@@ -5,13 +5,13 @@ ExItems = [
   {
     name: 'Cal Men’s Club Lacrosse Team'
     position: 'MCLA D-1 Student Athlete / Lead Web Designer'
-    time: 'Fall 2012 - Present'
+    time: 'Fall 2012 - 2015'
     description: ['Headed website for a three-month long campaign by the team that had raised over $250,000 in funding']
   }
   {
     name: 'Phi Gamma Delta Fraternity'
     position: 'Vice President/Treasurer, Scholarship Chair'
-    time: 'Fall 2012 - Present'
+    time: 'Fall 2012 - 2015'
     description: ['Oversaw and budgeted $150,000 and carried out chapter affairs; Promoted scholarship and organized resume workshops']
   }
   {
