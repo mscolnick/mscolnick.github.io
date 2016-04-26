@@ -3,7 +3,7 @@ ContentSection = require('./ContentSection')
 Col = require('react-bootstrap').Col
 
 SocialItems = [
-  { name: 'email', link: 'mailto:mscolnick@berkeley.edu'}
+  { name: 'email', link: 'mailto:mscolnick@gmail.com'}
   { name: 'linkedin', link: 'https://www.linkedin.com/in/mscolnick'}
   { name: 'github', link: 'https://github.com/mscolnick'}
   { name: 'quora', link: 'http://www.quora.com/Myles-Scolnick'}
