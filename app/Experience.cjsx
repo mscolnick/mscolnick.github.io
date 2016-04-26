@@ -22,7 +22,7 @@ ExperienceItems = [
     name: 'University of California, Berkeley'
     location: 'Berkeley, CA'
     position: 'Double Major: Computer Science & Mathematics'
-    time: 'Expected Graduation: December 2015'
+    time: 'Fall 2012 - Spring 2015'
     description: [
       'Technical GPA: 3.67/4.0'
       '<i>Coursework:</i> Linear Algebra and Differential Equations (54), Intro to Analysis (104), Advanced Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs (61A), Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory (70), Efficient Algorithms and Intractable Problems (170), iOS Game Development (198), Intro to Digital Electronics (42), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Artificial Intelligence (188), Computer Security (161), Operating Systems and System Programming (162), Numerical Analysis (128A), Databases (186), Complex Analysis (185), Machine Learning (189)']
