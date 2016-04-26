@@ -20,7 +20,6 @@ Contact = React.createClass
         <ul className='blue'>
           <li>(303)–250–0788</li>
           <li>Email: <a href='mailto:mscolnick@berkeley.edu'>mscolnick@berkeley.edu</a></li>
-          <li>2395 Piedmont Ave. Berkeley, CA 94704</li>
         </ul>
       </Col>
       <Col xs={12} sm={6}>
