@@ -7,7 +7,7 @@ About = React.createClass
     <ContentSection id='about' title='About Me'>
       <a className='btn btn-success pull-right pdf hidden-xs' href='resume_tex/resume.pdf'>Printable PDF</a>
       <Col xs={12} md={2} className='text-center'>
-        <img alt='MylesScolnick' src={'images/me.jpg'} />
+        <img alt='MylesScolnick' src={'images/portrait.jpg'} />
       </Col>
       <Col xs={12} md={8} mdOffset={1}>
         <h5>Hello, world! My name is Myles Scolnick. I am a Software Engineer from Berkeley, CA.</h5>
