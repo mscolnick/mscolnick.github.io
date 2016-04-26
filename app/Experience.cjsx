@@ -67,7 +67,7 @@ ExperienceItems = [
     name: 'Red Bull'
     location: 'Berkeley, CA'
     position: 'Student Brand Manager'
-    time: 'Spring 2014 - Present'
+    time: 'Spring 2014 - Summer 2015'
     description: [
       'Infused Red Bull into the student lifestyle through co-ordination of projects on university campus and support of student events'
       'Developed and maintain relationships and support of key university bodies and individuals'
