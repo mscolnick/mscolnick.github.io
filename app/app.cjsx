@@ -1,6 +1,11 @@
-React = require('react')
-Body = require('./Body')
+React = require 'react'
+ReactDOM = require 'react-dom'
+Body = require './Body'
 
-React.render(
-  <Body />,
-  document.body)
+ga = require 'react-ga'
+ga.initialize 'UA-62414107-3'
+
+logPageView = () ->
+  ga.pageview window.location.pathname
+
+ReactDOM.render(<Body onUpdate={logPageView} />, document.getElementById('app'))

@@ -1,14 +1,16 @@
-React = require('react')
-NavItem = require('react-bootstrap').NavItem
+React = require 'react'
+{ NavItem } = require 'react-bootstrap'
 
 Sections = ['About', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
 
 Navigation = React.createClass
+  displayName: 'Navigation'
+
   _getLinks: ->
     links = []
     for section, i in Sections
       links.push <NavItem eventKey={i} key={i} href="##{section.toLowerCase()}">{section}</NavItem>
-    links.splice 3, 0, <li key={6}> <a className='visible-lg-inline-block' id='logo'></a> </li>
+    links.splice 3, 0, <li key={6}> <a className='visible-lg-inline-block' id='logo' key={10}></a> </li>
     links
 
   render: ->
@@ -16,7 +18,7 @@ Navigation = React.createClass
       <div className='container'>
         <div className='navbar-header'>
           <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-            {<span className='icon-bar'></span> for i in [0...3]}
+            {<span className='icon-bar' key={i}></span> for i in [0...3]}
           </button>
           <a className='navbar-brand visible-xs-block'>Myles Scolnick</a>
         </div>

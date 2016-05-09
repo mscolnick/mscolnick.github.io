@@ -1,8 +1,10 @@
-React = require('react')
-Col = require('react-bootstrap').Col
-Row = require('react-bootstrap').Row
+React = require 'react'
+{ Col
+  Row } = require 'react-bootstrap'
 
 ContentSection = React.createClass
+  displayName: 'Section'
+
   props:
     id: React.PropTypes.string.isRequired
     title: React.PropTypes.string.isRequired

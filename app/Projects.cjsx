@@ -1,10 +1,10 @@
-React = require('react')
-ContentSection = require('./ContentSection')
-Glyphicon = require('react-bootstrap').Glyphicon
+React = require 'react'
+ContentSection = require './ContentSection'
+{ Glyphicon } = require 'react-bootstrap'
 
 ProjectItems = [
   {
-    url: 'http://mscolnick.github.io/resources/radius-report.pdf'
+    url: 'resources/radius-report.pdf'
     name: 'NAICS Classifier'
     languages: 'Python, NLTK'
     time: 'Fall 2015'
@@ -56,6 +56,8 @@ ProjectItems = [
 ]
 
 Projects = React.createClass
+  displayName: 'Projects'
+
   render: ->
     <ContentSection id='projects' title='Projects'>
       {<Project data={p} key={i} /> for p, i in ProjectItems}
@@ -64,6 +66,8 @@ Projects = React.createClass
 module.exports = Projects
 
 Project = React.createClass
+  displayName: 'Project'
+
   props:
     data: React.PropTypes.object.isRequired
 

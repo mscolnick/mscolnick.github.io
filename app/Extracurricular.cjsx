@@ -1,5 +1,5 @@
-React = require('react')
-ContentSection = require('./ContentSection')
+React = require 'react'
+ContentSection = require './ContentSection'
 
 ExItems = [
   {
@@ -23,6 +23,8 @@ ExItems = [
 ]
 
 Extracurricular = React.createClass
+  displayName: 'Extracurricular'
+
   render: ->
     <ContentSection id='involvement' title='Involvement'>
       {<ExtracurricularItem data={item} key={i} /> for item, i in ExItems}
@@ -31,6 +33,8 @@ Extracurricular = React.createClass
 module.exports = Extracurricular
 
 ExtracurricularItem = React.createClass
+  displayName: 'ExtracurricularItem'
+
   props:
     data: React.PropTypes.object.isRequired
 

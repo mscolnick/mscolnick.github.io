@@ -1,8 +1,9 @@
-React = require('react')
-ContentSection = require('./ContentSection')
-ProgressBar = require('react-bootstrap').ProgressBar
-Col = require('react-bootstrap').Col
-Row = require('react-bootstrap').Row
+React = require 'react'
+ContentSection = require './ContentSection'
+{ ProgressBar
+  Col
+  Row
+  Image } = require 'react-bootstrap'
 
 ProgressType = ['success', 'info', 'warning', 'danger']
 TechincalItems = [
@@ -88,15 +89,17 @@ ExperienceItems = [
 ]
 
 Experience = React.createClass
+  displayName: 'Experience'
+
   render: ->
     <ContentSection id='experience' title='Experience'>
-      {<ExperienceSection data={item} key={i} /> for item, i in ExperienceItems}
+      {<ExperienceItem data={item} key={i} /> for item, i in ExperienceItems}
       <br />
       <Row>
         <Col xs={12} className='well'>
           <h3>Technical</h3>
           <Row>
-            {<TechincalSection data={item} progressType={ProgressType[i%ProgressType.length]} key={i} /> for item, i in TechincalItems}
+            {<TechincalItem data={item} progressType={ProgressType[i%ProgressType.length]} key={i} /> for item, i in TechincalItems}
             <Col xs={12}>
               <em>Tools: </em>Git, Vim, Eclipse, AWS, Processing, Bootstrap, Hadoop, Xcode, Twilio, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, VirtualBox
               <br />
@@ -110,7 +113,9 @@ Experience = React.createClass
 
 module.exports = Experience
 
-ExperienceSection = React.createClass
+ExperienceItem = React.createClass
+  displayName: 'ExperienceItem'
+
   props:
     data: React.PropTypes.object.isRequired
 
@@ -118,7 +123,7 @@ ExperienceSection = React.createClass
     <Row>
       <Col xs={12} md={2} className='text-center'>
         <a href={@props.data.url}>
-          <img alt={@props.data.logoName} className='logo' src={'images/companies/' + @props.data.logoName} />
+          <Image responsive alt={@props.data.logoName} className='logo' src="images/companies/#{@props.data.logoName}" />
         </a>
       </Col>
       <Col xs={12} md={10}>
@@ -135,7 +140,9 @@ ExperienceSection = React.createClass
       </Col>
     </Row>
 
-TechincalSection = React.createClass
+TechincalItem = React.createClass
+  displayName: 'TechincalItem'
+
   props:
     data: React.PropTypes.object.isRequired
     progressType: React.PropTypes.string.isRequired

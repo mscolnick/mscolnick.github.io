@@ -1,6 +1,6 @@
-React = require('react')
-ContentSection = require('./ContentSection')
-Col = require('react-bootstrap').Col
+React = require 'react'
+ContentSection = require './ContentSection'
+{ Col } = require 'react-bootstrap'
 
 SocialItems = [
   { name: 'email', link: 'mailto:mscolnick@gmail.com'}
@@ -12,13 +12,15 @@ SocialItems = [
 ]
 
 Contact = React.createClass
+  displayName: 'Contact'
+
   render: ->
     <ContentSection id='contact' title='Contact'>
       <Col xs={12} sm={6}>
         <h2>One Way</h2>
         <ul className='blue'>
           <li>(303)–250–0788</li>
-          <li>Email: <a href='mailto:mscolnick@berkeley.edu'>mscolnick@berkeley.edu</a></li>
+          <li>Email: <a href='mailto:mscolnick@gmail.com'>mscolnick@gmail.com</a></li>
         </ul>
       </Col>
       <Col xs={12} sm={6}>
