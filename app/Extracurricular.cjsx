@@ -1,5 +1,6 @@
 React = require 'react'
 ContentSection = require './ContentSection'
+MSList = require './MSList'
 
 { Header
   Column
@@ -54,7 +55,5 @@ ExtracurricularItem = React.createClass
           <div className="sub header">{@props.data.position}</div>
         </Header>
       </Segment>
-      <ul className="blue">
-       {<li key={i}>{d}</li> for d, i in @props.data.description}
-      </ul>
+      <MSList items={@props.data.description}/>
     </Column>

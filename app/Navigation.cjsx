@@ -6,7 +6,7 @@ React = require 'react'
   Menu
   Item } = require 'react-semantify'
 
-Sections = ['About', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
+Sections = ['About', 'Education', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
 
 Navigation = React.createClass
   displayName: 'Navigation'

@@ -1,11 +1,11 @@
 React = require 'react'
 
-{ Segment
-  Divider
+{ Divider
   Icon
   Content } = require 'react-semantify'
 
 ContentHeader = React.createClass
+  displayName: 'ContentHeader'
   
   propTypes:
     title: React.PropTypes.string.isRequired

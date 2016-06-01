@@ -2,7 +2,6 @@ React = require 'react'
 ContentSection = require './ContentSection'
 
 { Grid
-  Divider
   Image
   Container
   Column } = require 'react-semantify'

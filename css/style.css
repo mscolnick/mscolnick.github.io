@@ -16,36 +16,21 @@
   }
   .secondary.menu .item,
   .secondary.menu .menu {
-    display: none;
+    display: none !important;
   }
   .secondary.menu .toc.item {
-    display: block;
+    display: block !important;
   }
 }
 
 /* list with custom icon */
 
-.blue li {
-  margin-left: 20px;
-  position: relative;
-}
-
-.blue {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.blue li::before {
-  content: "\2b";
-  font-family: "Glyphicons Halflings";
-  line-height: 1;
-  margin: 10px;
-  display: inline-block;
-  color: #2ECCFA;
+.ui.list {
+  margin-left: 30px;
 }
 
 .at-symbol, .location {
-  color: #737373;
+  color: #b5cc18;
   font-size: 70%;
 }
 

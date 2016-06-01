@@ -2,6 +2,7 @@ React = require 'react'
 Navigation = require './Navigation'
 Footer = require './Footer'
 About = require './About'
+Education = require './Education'
 Experience = require './Experience'
 Projects = require './Projects'
 Extracurricular = require './Extracurricular'
@@ -11,7 +12,7 @@ Contact = require './Contact'
 { Item
   Menu } = require 'react-semantify'
 
-Sections = ['About', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
+Sections = ['About', 'Education', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
 
 Body = React.createClass
   displayName: 'Body'
@@ -26,6 +27,7 @@ Body = React.createClass
       </Menu>
       <Navigation />
       <About />
+      <Education />
       <Experience />
       <Projects />
       <Extracurricular />

@@ -1,10 +1,9 @@
 React = require 'react'
 ContentSection = require './ContentSection'
+MSList = require './MSList'
 
 { Grid
-  Header
-  Column
-  Divider } = require 'react-semantify'
+  Column } = require 'react-semantify'
 
 SocialItems = [
   { name: 'email', link: 'mailto:mscolnick@gmail.com'}
@@ -15,6 +14,11 @@ SocialItems = [
   { name: 'skype', link: 'skype:MylesScolnick?call'}
 ]
 
+ContactInfo = [
+  '+1 (303)–250–0788'
+  'Email: <a href="mailto:mscolnick@gmail.com">mscolnick@gmail.com</a>'
+]
+
 Contact = React.createClass
   displayName: 'Contact'
 
@@ -22,10 +26,7 @@ Contact = React.createClass
     <ContentSection id="contact" title="Contact" icon="mail">
       <Grid className="two column middle aligned stackable vertically padded">
         <Column>
-          <ul className="blue">
-            <li>(303)–250–0788</li>
-            <li>Email: <a href="mailto:mscolnick@gmail.com">mscolnick@gmail.com</a></li>
-          </ul>
+          <MSList items={ContactInfo}/>
         </Column>
         <Column>
           {<a className="#{s.name}-hover social-slide" href={s.link} key={i}/> for s, i in SocialItems}

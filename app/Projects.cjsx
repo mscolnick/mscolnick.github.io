@@ -1,5 +1,6 @@
 React = require 'react'
 ContentSection = require './ContentSection'
+MSList = require './MSList'
 
 { Header
   Icon
@@ -89,7 +90,5 @@ Project = React.createClass
           <div className="sub header">Language: {@props.data.languages}</div>
         </Header>
       </Segment>
-      <ul className="blue">
-        {<li dangerouslySetInnerHTML={{__html: d}} key={i} /> for d, i in @props.data.description}
-      </ul>
+      <MSList items={@props.data.description}/>
     </Column>

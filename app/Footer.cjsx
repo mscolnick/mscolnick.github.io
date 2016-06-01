@@ -14,7 +14,7 @@ Footer = React.createClass
       <Container>
         <Grid className="stackable inverted divided">
           <Column className="thirteen wide">
-            Copyright © 2016 by Myles Scolnick
+            <Icon className="copyright small"/> 2016 -- Myles Scolnick
           </Column>
           <Column className="three wide">
             <a className="ui button blue" href="resume_tex/resume.pdf"><Icon className="file pdf outline"/> Print</a>

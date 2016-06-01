@@ -1,18 +1,20 @@
 React = require 'react'
 ReactDOM = require 'react-dom'
 ContentSection = require './ContentSection'
+MSList = require './MSList'
 
 { Grid
-  Divider
   Image
-  Container
   Column
   Progress
   Segment
   Header
-  Row } = require 'react-semantify'
+  Row
+  List
+  Item } = require 'react-semantify'
 
 ProgressType = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink']
+Tools = ['Git', 'Vim', 'Eclipse', 'AWS', 'Processing', 'Bootstrap', 'Hadoop', 'Xcode', 'Twilio', 'CMake', 'OpenCV', 'OpenMP', 'SSE Intrinsics', 'SQLite', 'LaTeX', 'jQuery', 'VirtualBox']
 
 TechincalItems = [
   { name: 'Python', progress: 95}
@@ -26,15 +28,13 @@ TechincalItems = [
 ]
 ExperienceItems = [
   {
-    url: 'http://www.berkeley.edu'
-    logoName: 'cal_logo.gif'
-    name: 'University of California, Berkeley'
-    location: 'Berkeley, CA'
-    position: 'Double Major: Computer Science & Mathematics'
-    time: 'Fall 2012 - Spring 2015'
-    description: [
-      'Technical GPA: 3.67/4.0'
-      '<i>Coursework:</i> Linear Algebra and Differential Equations (54), Intro to Analysis (104), Advanced Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs (61A), Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory (70), Efficient Algorithms and Intractable Problems (170), iOS Game Development (198), Intro to Digital Electronics (42), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Artificial Intelligence (188), Computer Security (161), Operating Systems and System Programming (162), Numerical Analysis (128A), Databases (186), Complex Analysis (185), Machine Learning (189)']
+    url: 'https://www.palantir.com'
+    logoName: 'palantir.png'
+    name: 'Palantir Technologies'
+    location: 'around the world'
+    position: 'Incoming Software Engineer'
+    time: 'Summer 2016 - Present'
+    description: []
   }
   {
     url: 'https://www.palantir.com'
@@ -107,9 +107,10 @@ Experience = React.createClass
           <Segment className="piled">
             <Header>Technical</Header>
             {<TechincalItem data={item} progressType={ProgressType[i%ProgressType.length]} key={i} /> for item, i in TechincalItems}
-            <em>Tools: </em>Git, Vim, Eclipse, AWS, Processing, Bootstrap, Hadoop, Xcode, Twilio, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, VirtualBox
-            <br />
-            <em>OS: </em>Mac OS, Linux/Ubuntu
+            <Header className="tiny">Tools</Header>
+            <List className="horizontal bulleted link">
+              {<Item key={i}>{e}</Item> for e, i in Tools}
+            </List>
           </Segment>
         </Column>
       </Grid>
@@ -132,7 +133,9 @@ ExperienceItem = React.createClass
       </Column>
       <Column className="thirteen wide">
         <Segment className="basic clearing">
-          <Header className="right floated small">{@props.data.time}</Header>
+          <Header className="right floated small">
+            {@props.data.time}
+          </Header>
           <Header className="left floated large">
             {@props.data.name}
             <span className="at-symbol"> @ </span>
@@ -140,9 +143,7 @@ ExperienceItem = React.createClass
             <div className="sub header">{@props.data.position}</div>
           </Header>
         </Segment>
-        <ul className="blue">
-          {<li dangerouslySetInnerHTML={{__html: d}} key={i} /> for d, i in @props.data.description}
-        </ul>
+        <MSList items={@props.data.description}/>
       </Column>
     </Row>
 
