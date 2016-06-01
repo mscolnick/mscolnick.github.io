@@ -1,6 +1,11 @@
 React = require 'react'
 ContentSection = require './ContentSection'
 
+{ Header
+  Column
+  Grid
+  Segment } = require 'react-semantify'
+
 ExItems = [
   {
     name: 'Cal Men’s Club Lacrosse Team'
@@ -26,8 +31,10 @@ Extracurricular = React.createClass
   displayName: 'Extracurricular'
 
   render: ->
-    <ContentSection id='involvement' title='Involvement'>
-      {<ExtracurricularItem data={item} key={i} /> for item, i in ExItems}
+    <ContentSection id="involvement" title="Involvement" icon="map">
+      <Grid className="one column vertically padded">
+        {<ExtracurricularItem data={item} key={i} /> for item, i in ExItems}
+      </Grid>
     </ContentSection>
 
 module.exports = Extracurricular
@@ -39,11 +46,15 @@ ExtracurricularItem = React.createClass
     data: React.PropTypes.object.isRequired
 
   render: ->
-    <div>
-      <h3>{@props.data.name}</h3>
-      <h4>{@props.data.position}</h4>
-      <h6>{@props.data.time}</h6>
-      <ul className='blue'>
+    <Column>
+      <Segment className="basic clearing">
+        <Header className="right floated small">{@props.data.time}</Header>
+        <Header className="left floated large">
+          {@props.data.name}
+          <div className="sub header">{@props.data.position}</div>
+        </Header>
+      </Segment>
+      <ul className="blue">
        {<li key={i}>{d}</li> for d, i in @props.data.description}
       </ul>
-    </div>
+    </Column>

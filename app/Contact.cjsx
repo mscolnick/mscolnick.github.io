@@ -1,6 +1,10 @@
 React = require 'react'
 ContentSection = require './ContentSection'
-{ Col } = require 'react-bootstrap'
+
+{ Grid
+  Header
+  Column
+  Divider } = require 'react-semantify'
 
 SocialItems = [
   { name: 'email', link: 'mailto:mscolnick@gmail.com'}
@@ -15,18 +19,18 @@ Contact = React.createClass
   displayName: 'Contact'
 
   render: ->
-    <ContentSection id='contact' title='Contact'>
-      <Col xs={12} sm={6}>
-        <h2>One Way</h2>
-        <ul className='blue'>
-          <li>(303)–250–0788</li>
-          <li>Email: <a href='mailto:mscolnick@gmail.com'>mscolnick@gmail.com</a></li>
-        </ul>
-      </Col>
-      <Col xs={12} sm={6}>
-        <h2>Another Way</h2>
-        {<a className="#{s.name}-hover social-slide" href={s.link} key={i}/> for s, i in SocialItems}
-      </Col>
+    <ContentSection id="contact" title="Contact" icon="mail">
+      <Grid className="two column middle aligned stackable vertically padded">
+        <Column>
+          <ul className="blue">
+            <li>(303)–250–0788</li>
+            <li>Email: <a href="mailto:mscolnick@gmail.com">mscolnick@gmail.com</a></li>
+          </ul>
+        </Column>
+        <Column>
+          {<a className="#{s.name}-hover social-slide" href={s.link} key={i}/> for s, i in SocialItems}
+        </Column>
+      </Grid>
     </ContentSection>
 
 module.exports = Contact

@@ -1,22 +1,26 @@
 React = require 'react'
-{ Col
-  Row
-  Button } = require 'react-bootstrap'
+
+{ Segment
+  Container
+  Grid
+  Column
+  Icon } = require 'react-semantify'
 
 Footer = React.createClass
   displayName: 'Footer'
 
   render: ->
-    <div className='footer'>
-      <div className='container'>
-        <hr />
-        <Row>
-          <Col xs={12} sm={6} className='copy'>Copyright © 2016 by Myles Scolnick</Col>
-          <Col xs={12} sm={6}>
-            <Button className='pull-right pdf' bsStyle='success' href='resume_tex/resume.pdf'>Printable PDF</Button>
-          </Col>
-        </Row>
-      </div>
-    </div>
+    <Segment className="inverted vertical footer">
+      <Container>
+        <Grid className="stackable inverted divided">
+          <Column className="thirteen wide">
+            Copyright © 2016 by Myles Scolnick
+          </Column>
+          <Column className="three wide">
+            <a className="ui button blue" href="resume_tex/resume.pdf"><Icon className="file pdf outline"/> Print</a>
+          </Column>
+        </Grid>
+      </Container>
+    </Segment>
 
 module.exports = Footer

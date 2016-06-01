@@ -1,6 +1,8 @@
 React = require 'react'
-{ Col
-  Row } = require 'react-bootstrap'
+ContentHeader = require './ContentHeader'
+
+{ Segment
+  Container } = require 'react-semantify'
 
 ContentSection = React.createClass
   displayName: 'Section'
@@ -8,13 +10,16 @@ ContentSection = React.createClass
   props:
     id: React.PropTypes.string.isRequired
     title: React.PropTypes.string.isRequired
+    icon: React.PropTypes.string.isRequired
 
   render: ->
-    <Row className='anchor' id={@props.id}>
-      <h1><span>{@props.title}</span></h1>
-      <Col xs={12}>
+    <Segment className="basic vertical stripe" id={@props.id}>
+      <Container>
+        <ContentHeader
+          icon={@props.icon}
+          title={@props.title}/>
         {@props.children}
-      </Col>
-    </Row>
+      </Container>
+    </Segment>
 
 module.exports = ContentSection

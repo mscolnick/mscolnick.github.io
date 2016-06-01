@@ -1,33 +1,31 @@
 React = require 'react'
-{ NavItem } = require 'react-bootstrap'
+
+{ Segment
+  Container
+  Icon
+  Menu
+  Item } = require 'react-semantify'
 
 Sections = ['About', 'Experience', 'Projects', 'Involvement', 'Links', 'Contact']
 
 Navigation = React.createClass
   displayName: 'Navigation'
 
-  _getLinks: ->
-    links = []
-    for section, i in Sections
-      links.push <NavItem eventKey={i} key={i} href="##{section.toLowerCase()}">{section}</NavItem>
-    links.splice 3, 0, <li key={6}> <a className='visible-lg-inline-block' id='logo' key={10}></a> </li>
-    links
-
   render: ->
-    <div className='navbar navbar-inverse navbar-fixed-top' role='navigation'>
-      <div className='container'>
-        <div className='navbar-header'>
-          <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-            {<span className='icon-bar' key={i}></span> for i in [0...3]}
-          </button>
-          <a className='navbar-brand visible-xs-block'>Myles Scolnick</a>
-        </div>
-        <div className='navbar-collapse collapse' id='navbarspy'>
-          <ul className='nav nav-justified'>
-            {@_getLinks()}
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Segment className="vertical basic center aligned">
+      <Container>
+        <Menu className="large secondary">
+          <a className="toc item">
+            <Icon className="sidebar"/>
+          </a>
+          {<Item type="link" key={i} href="##{section.toLowerCase()}">{section}</Item> for section, i in Sections}
+          <div className="right menu">
+            <Item>
+              <a className="ui button blue" href="resume_tex/resume.pdf"><i className="file pdf outline icon"></i> Print</a>
+            </Item>
+          </div>
+        </Menu>
+      </Container>
+    </Segment>
 
 module.exports = Navigation

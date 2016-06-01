@@ -1,11 +1,19 @@
 React = require 'react'
+ReactDOM = require 'react-dom'
 ContentSection = require './ContentSection'
-{ ProgressBar
-  Col
-  Row
-  Image } = require 'react-bootstrap'
 
-ProgressType = ['success', 'info', 'warning', 'danger']
+{ Grid
+  Divider
+  Image
+  Container
+  Column
+  Progress
+  Segment
+  Header
+  Row } = require 'react-semantify'
+
+ProgressType = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink']
+
 TechincalItems = [
   { name: 'Python', progress: 95}
   { name: 'Java', progress: 95}
@@ -92,23 +100,19 @@ Experience = React.createClass
   displayName: 'Experience'
 
   render: ->
-    <ContentSection id='experience' title='Experience'>
-      {<ExperienceItem data={item} key={i} /> for item, i in ExperienceItems}
-      <br />
-      <Row>
-        <Col xs={12} className='well'>
-          <h3>Technical</h3>
-          <Row>
+    <ContentSection id="experience" title="Experience" icon={"line chart"}>
+      <Grid className="stackable vertically padded">
+        {<ExperienceItem data={item} key={i} /> for item, i in ExperienceItems}
+        <Column className="sixteen wide">
+          <Segment className="piled">
+            <Header>Technical</Header>
             {<TechincalItem data={item} progressType={ProgressType[i%ProgressType.length]} key={i} /> for item, i in TechincalItems}
-            <Col xs={12}>
-              <em>Tools: </em>Git, Vim, Eclipse, AWS, Processing, Bootstrap, Hadoop, Xcode, Twilio, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, VirtualBox
-              <br />
-              <em>OS: </em>
-              Mac OS, Linux/Ubuntu
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+            <em>Tools: </em>Git, Vim, Eclipse, AWS, Processing, Bootstrap, Hadoop, Xcode, Twilio, CMake, OpenCV, OpenMP, SSE Intrinsics, SQLite, LaTeX, jQuery, VirtualBox
+            <br />
+            <em>OS: </em>Mac OS, Linux/Ubuntu
+          </Segment>
+        </Column>
+      </Grid>
     </ContentSection>
 
 module.exports = Experience
@@ -121,23 +125,25 @@ ExperienceItem = React.createClass
 
   render: ->
     <Row>
-      <Col xs={12} md={2} className='text-center'>
+      <Column className="three wide">
         <a href={@props.data.url}>
-          <Image responsive alt={@props.data.logoName} className='logo' src="images/companies/#{@props.data.logoName}" />
+          <Image className="fluid rounded centered" alt={@props.data.logoName} src="images/companies/#{@props.data.logoName}" />
         </a>
-      </Col>
-      <Col xs={12} md={10}>
-        <h3>
-          {@props.data.name}
-          <span className='at-symbol'> @ </span>
-          <span className='location'>{@props.data.location}</span>
-        </h3>
-        <h4>{@props.data.position}</h4>
-        <h6>{@props.data.time}</h6>
-        <ul className='blue'>
+      </Column>
+      <Column className="thirteen wide">
+        <Segment className="basic clearing">
+          <Header className="right floated small">{@props.data.time}</Header>
+          <Header className="left floated large">
+            {@props.data.name}
+            <span className="at-symbol"> @ </span>
+            <span className="location">{@props.data.location}</span>
+            <div className="sub header">{@props.data.position}</div>
+          </Header>
+        </Segment>
+        <ul className="blue">
           {<li dangerouslySetInnerHTML={{__html: d}} key={i} /> for d, i in @props.data.description}
         </ul>
-      </Col>
+      </Column>
     </Row>
 
 TechincalItem = React.createClass
@@ -148,9 +154,11 @@ TechincalItem = React.createClass
     progressType: React.PropTypes.string.isRequired
 
   render: ->
-    <div>
-      <Col xs={12} sm={2}>{@props.data.name}</Col>
-      <Col xs={12} sm={10}>
-        <ProgressBar bsStyle={@props.progressType} now={@props.data.progress} />
-      </Col>
-    </div>
+    <Grid>
+      <Column className="three wide">{@props.data.name}</Column>
+      <Column className="thirteen wide">
+        <Progress className="#{@props.progressType}" init={{percent: @props.data.progress}}>
+          <div className="bar"></div>
+        </Progress>
+      </Column>
+    </Grid>

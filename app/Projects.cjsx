@@ -1,6 +1,11 @@
 React = require 'react'
 ContentSection = require './ContentSection'
-{ Glyphicon } = require 'react-bootstrap'
+
+{ Header
+  Icon
+  Segment
+  Grid
+  Column } = require 'react-semantify'
 
 ProjectItems = [
   {
@@ -59,8 +64,10 @@ Projects = React.createClass
   displayName: 'Projects'
 
   render: ->
-    <ContentSection id='projects' title='Projects'>
-      {<Project data={p} key={i} /> for p, i in ProjectItems}
+    <ContentSection id="projects" title="Projects" icon="lab">
+      <Grid className="one column vertically padded">
+        {<Project data={p} key={i} /> for p, i in ProjectItems}
+      </Grid>
     </ContentSection>
 
 module.exports = Projects
@@ -72,16 +79,17 @@ Project = React.createClass
     data: React.PropTypes.object.isRequired
 
   render: ->
-    <div>
-      <a href={@props.data.url}>
-        <h3 className='proj'>
-          {@props.data.name}
-          <Glyphicon glyph='arrow-right' className='arrow' />
-        </h3>
-      </a>
-      <h4>Language: {@props.data.languages}</h4>
-      <h6>{@props.data.time}</h6>
-      <ul className='blue'>
+    <Column>
+      <Segment className="basic clearing">
+        <Header className="right floated small">{@props.data.time}</Header>
+        <Header className="left floated large">
+          <a href={@props.data.url}>
+           {@props.data.name} <Icon className="linkify tiny"/>
+          </a>
+          <div className="sub header">Language: {@props.data.languages}</div>
+        </Header>
+      </Segment>
+      <ul className="blue">
         {<li dangerouslySetInnerHTML={{__html: d}} key={i} /> for d, i in @props.data.description}
       </ul>
-    </div>
+    </Column>
