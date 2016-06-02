@@ -52,7 +52,7 @@
 
 	Body = __webpack_require__(168);
 
-	ga = __webpack_require__(240);
+	ga = __webpack_require__(243);
 
 	ga.initialize('UA-62414107-3');
 
@@ -20160,7 +20160,7 @@
 /* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var About, Body, Contact, Education, Experience, Extracurricular, Footer, Item, Links, Menu, Navigation, Projects, React, Sections, ref;
+	var About, Body, Contact, Education, Experience, Extracurricular, Extras, Footer, Item, Links, Menu, Navigation, Projects, React, Sections, ref;
 
 	React = __webpack_require__(1);
 
@@ -20170,17 +20170,19 @@
 
 	About = __webpack_require__(232);
 
-	Education = __webpack_require__(251);
+	Education = __webpack_require__(235);
 
-	Experience = __webpack_require__(235);
+	Experience = __webpack_require__(237);
 
-	Projects = __webpack_require__(236);
+	Projects = __webpack_require__(238);
 
-	Extracurricular = __webpack_require__(237);
+	Extracurricular = __webpack_require__(239);
 
-	Links = __webpack_require__(238);
+	Links = __webpack_require__(240);
 
-	Contact = __webpack_require__(239);
+	Extras = __webpack_require__(241);
+
+	Contact = __webpack_require__(242);
 
 	ref = __webpack_require__(170), Item = ref.Item, Menu = ref.Menu;
 
@@ -20207,7 +20209,7 @@
 	        }, section));
 	      }
 	      return results;
-	    })()), React.createElement(Navigation, null), React.createElement(About, null), React.createElement(Education, null), React.createElement(Experience, null), React.createElement(Projects, null), React.createElement(Extracurricular, null), React.createElement(Links, null), React.createElement(Contact, null), React.createElement(Footer, null));
+	    })()), React.createElement(Navigation, null), React.createElement(About, null), React.createElement(Education, null), React.createElement(Experience, null), React.createElement(Projects, null), React.createElement(Extracurricular, null), React.createElement(Links, null), React.createElement(Extras, null), React.createElement(Contact, null), React.createElement(Footer, null));
 	  }
 	});
 
@@ -23464,6 +23466,139 @@
 /* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var Column, ContentSection, Education, EducationItem, EducationItems, Grid, Header, Image, MSList, React, ReactDOM, Row, Segment, ref;
+
+	React = __webpack_require__(1);
+
+	ReactDOM = __webpack_require__(33);
+
+	ContentSection = __webpack_require__(233);
+
+	MSList = __webpack_require__(236);
+
+	ref = __webpack_require__(170), Grid = ref.Grid, Image = ref.Image, Column = ref.Column, Segment = ref.Segment, Header = ref.Header, Row = ref.Row;
+
+	EducationItems = [
+	  {
+	    url: 'http://www.berkeley.edu',
+	    logoName: 'cal_logo.gif',
+	    name: 'University of California, Berkeley',
+	    location: 'Berkeley, CA',
+	    position: 'Double Major: Computer Science & Mathematics',
+	    time: 'Fall 2012 - Spring 2015',
+	    description: ['Technical GPA: 3.67/4.0', '<i>Coursework:</i> Linear Algebra and Differential Equations (54), Intro to Analysis (104), Advanced Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs (61A), Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory (70), Efficient Algorithms and Intractable Problems (170), iOS Game Development (198), Intro to Digital Electronics (42), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Artificial Intelligence (188), Computer Security (161), Operating Systems and System Programming (162), Numerical Analysis (128A), Databases (186), Complex Analysis (185), Machine Learning (189)']
+	  }
+	];
+
+	Education = React.createClass({
+	  displayName: 'Education',
+	  render: function() {
+	    var i, item;
+	    return React.createElement(ContentSection, {
+	      "id": "education",
+	      "title": "Education",
+	      "icon": "student"
+	    }, React.createElement(Grid, {
+	      "className": "stackable vertically padded"
+	    }, (function() {
+	      var j, len, results;
+	      results = [];
+	      for (i = j = 0, len = EducationItems.length; j < len; i = ++j) {
+	        item = EducationItems[i];
+	        results.push(React.createElement(EducationItem, {
+	          "data": item,
+	          "key": i
+	        }));
+	      }
+	      return results;
+	    })()));
+	  }
+	});
+
+	module.exports = Education;
+
+	EducationItem = React.createClass({
+	  displayName: 'EducationItem',
+	  props: {
+	    data: React.PropTypes.object.isRequired
+	  },
+	  render: function() {
+	    return React.createElement(Row, null, React.createElement(Column, {
+	      "className": "three wide"
+	    }, React.createElement("a", {
+	      "href": this.props.data.url
+	    }, React.createElement(Image, {
+	      "className": "fluid rounded centered",
+	      "alt": this.props.data.logoName,
+	      "src": "images/companies/" + this.props.data.logoName
+	    }))), React.createElement(Column, {
+	      "className": "thirteen wide"
+	    }, React.createElement(Segment, {
+	      "className": "basic clearing"
+	    }, React.createElement(Header, {
+	      "className": "right floated small"
+	    }, this.props.data.time), React.createElement(Header, {
+	      "className": "left floated large"
+	    }, this.props.data.name, React.createElement("span", {
+	      "className": "at-symbol"
+	    }, " @ "), React.createElement("span", {
+	      "className": "location"
+	    }, this.props.data.location), React.createElement("div", {
+	      "className": "sub header"
+	    }, this.props.data.position))), React.createElement(MSList, {
+	      "items": this.props.data.description
+	    })));
+	  }
+	});
+
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Content, Icon, Item, List, MSList, React, ref;
+
+	React = __webpack_require__(1);
+
+	ref = __webpack_require__(170), List = ref.List, Icon = ref.Icon, Content = ref.Content, Item = ref.Item;
+
+	MSList = React.createClass({
+	  displayName: 'MSList',
+	  propTypes: {
+	    items: React.PropTypes.array.isRequired
+	  },
+	  render: function() {
+	    var d, i;
+	    return React.createElement(List, {
+	      "className": "relaxed"
+	    }, (function() {
+	      var j, len, ref1, results;
+	      ref1 = this.props.items;
+	      results = [];
+	      for (i = j = 0, len = ref1.length; j < len; i = ++j) {
+	        d = ref1[i];
+	        results.push(React.createElement(Item, {
+	          "key": i
+	        }, React.createElement(Icon, {
+	          "className": "plus teal"
+	        }), React.createElement(Content, {
+	          "dangerouslySetInnerHTML": {
+	            __html: d
+	          }
+	        })));
+	      }
+	      return results;
+	    }).call(this));
+	  }
+	});
+
+	module.exports = MSList;
+
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var Column, ContentSection, Experience, ExperienceItem, ExperienceItems, Grid, Header, Image, Item, List, MSList, Progress, ProgressType, React, ReactDOM, Row, Segment, TechincalItem, TechincalItems, Tools, ref;
 
 	React = __webpack_require__(1);
@@ -23472,7 +23607,7 @@
 
 	ContentSection = __webpack_require__(233);
 
-	MSList = __webpack_require__(250);
+	MSList = __webpack_require__(236);
 
 	ref = __webpack_require__(170), Grid = ref.Grid, Image = ref.Image, Column = ref.Column, Progress = ref.Progress, Segment = ref.Segment, Header = ref.Header, Row = ref.Row, List = ref.List, Item = ref.Item;
 
@@ -23675,7 +23810,7 @@
 
 
 /***/ },
-/* 236 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Column, ContentSection, Grid, Header, Icon, MSList, Project, ProjectItems, Projects, React, Segment, ref;
@@ -23684,7 +23819,7 @@
 
 	ContentSection = __webpack_require__(233);
 
-	MSList = __webpack_require__(250);
+	MSList = __webpack_require__(236);
 
 	ref = __webpack_require__(170), Header = ref.Header, Icon = ref.Icon, Segment = ref.Segment, Grid = ref.Grid, Column = ref.Column;
 
@@ -23775,7 +23910,7 @@
 
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Column, ContentSection, ExItems, Extracurricular, ExtracurricularItem, Grid, Header, MSList, React, Segment, ref;
@@ -23784,7 +23919,7 @@
 
 	ContentSection = __webpack_require__(233);
 
-	MSList = __webpack_require__(250);
+	MSList = __webpack_require__(236);
 
 	ref = __webpack_require__(170), Header = ref.Header, Column = ref.Column, Grid = ref.Grid, Segment = ref.Segment;
 
@@ -23856,7 +23991,7 @@
 
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ContentSection, Header, Icon, Item, Links, List, React, ref;
@@ -23906,7 +24041,42 @@
 
 
 /***/ },
-/* 239 */
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Column, ContentSection, Embed, Extras, Grid, Header, MSList, React, ref;
+
+	React = __webpack_require__(1);
+
+	ContentSection = __webpack_require__(233);
+
+	MSList = __webpack_require__(236);
+
+	ref = __webpack_require__(170), Grid = ref.Grid, Column = ref.Column, Header = ref.Header, Embed = ref.Embed;
+
+	Extras = React.createClass({
+	  displayName: 'Extras',
+	  render: function() {
+	    return React.createElement(ContentSection, {
+	      "id": "extras",
+	      "title": "Extras",
+	      "icon": "wizard"
+	    }, React.createElement(Grid, {
+	      "className": "two column centered"
+	    }, React.createElement(Column, {
+	      "className": "ten wide"
+	    }, React.createElement(Embed, {
+	      "url": "https://sketchfab.com/models/c2f52cc573354c7bbcd7743133ae77ea/embed",
+	      "init": true
+	    }))));
+	  }
+	});
+
+	module.exports = Extras;
+
+
+/***/ },
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Column, Contact, ContactInfo, ContentSection, Grid, MSList, React, SocialItems, ref;
@@ -23915,7 +24085,7 @@
 
 	ContentSection = __webpack_require__(233);
 
-	MSList = __webpack_require__(250);
+	MSList = __webpack_require__(236);
 
 	ref = __webpack_require__(170), Grid = ref.Grid, Column = ref.Column;
 
@@ -23975,7 +24145,7 @@
 
 
 /***/ },
-/* 240 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23989,12 +24159,12 @@
 	/**
 	 * Utilities
 	 */
-	var format = __webpack_require__(241);
-	var removeLeadingSlash = __webpack_require__(246);
-	var trim = __webpack_require__(244);
+	var format = __webpack_require__(244);
+	var removeLeadingSlash = __webpack_require__(249);
+	var trim = __webpack_require__(247);
 
-	var warn = __webpack_require__(245);
-	var log = __webpack_require__(247);
+	var warn = __webpack_require__(248);
+	var log = __webpack_require__(250);
 
 	var _debug = false;
 	var _titleCase = true;
@@ -24402,7 +24572,7 @@
 	  }
 	};
 
-	var OutboundLink = __webpack_require__(248);
+	var OutboundLink = __webpack_require__(251);
 	OutboundLink.origTrackLink = OutboundLink.trackLink;
 	OutboundLink.trackLink = ReactGA.outboundLink;
 	ReactGA.OutboundLink = OutboundLink;
@@ -24411,12 +24581,12 @@
 
 
 /***/ },
-/* 241 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var mightBeEmail = __webpack_require__(242);
-	var toTitleCase = __webpack_require__(243);
-	var warn = __webpack_require__(245);
+	var mightBeEmail = __webpack_require__(245);
+	var toTitleCase = __webpack_require__(246);
+	var warn = __webpack_require__(248);
 
 	var _redacted = 'REDACTED (Potential Email Address)';
 
@@ -24437,7 +24607,7 @@
 
 
 /***/ },
-/* 242 */
+/* 245 */
 /***/ function(module, exports) {
 
 	// See if s could be an email address. We don't want to send personal data like email.
@@ -24451,7 +24621,7 @@
 
 
 /***/ },
-/* 243 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24460,7 +24630,7 @@
 	 * https://github.com/gouch/to-title-case
 	 */
 
-	var trim = __webpack_require__(244);
+	var trim = __webpack_require__(247);
 
 	function toTitleCase(s) {
 	  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
@@ -24488,7 +24658,7 @@
 
 
 /***/ },
-/* 244 */
+/* 247 */
 /***/ function(module, exports) {
 
 	// GA strings need to have leading/trailing whitespace trimmed, and not all
@@ -24502,7 +24672,7 @@
 
 
 /***/ },
-/* 245 */
+/* 248 */
 /***/ function(module, exports) {
 
 	function warn(s) {
@@ -24513,7 +24683,7 @@
 
 
 /***/ },
-/* 246 */
+/* 249 */
 /***/ function(module, exports) {
 
 	function removeLeadingSlash(s) {
@@ -24528,7 +24698,7 @@
 
 
 /***/ },
-/* 247 */
+/* 250 */
 /***/ function(module, exports) {
 
 	function log(s) {
@@ -24539,11 +24709,11 @@
 
 
 /***/ },
-/* 248 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var assign = __webpack_require__(249);
+	var assign = __webpack_require__(252);
 
 	var NEWTAB = '_blank';
 
@@ -24587,7 +24757,7 @@
 
 
 /***/ },
-/* 249 */
+/* 252 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -24673,139 +24843,6 @@
 
 		return to;
 	};
-
-
-/***/ },
-/* 250 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Content, Icon, Item, List, MSList, React, ref;
-
-	React = __webpack_require__(1);
-
-	ref = __webpack_require__(170), List = ref.List, Icon = ref.Icon, Content = ref.Content, Item = ref.Item;
-
-	MSList = React.createClass({
-	  displayName: 'MSList',
-	  propTypes: {
-	    items: React.PropTypes.array.isRequired
-	  },
-	  render: function() {
-	    var d, i;
-	    return React.createElement(List, {
-	      "className": "relaxed"
-	    }, (function() {
-	      var j, len, ref1, results;
-	      ref1 = this.props.items;
-	      results = [];
-	      for (i = j = 0, len = ref1.length; j < len; i = ++j) {
-	        d = ref1[i];
-	        results.push(React.createElement(Item, {
-	          "key": i
-	        }, React.createElement(Icon, {
-	          "className": "plus teal"
-	        }), React.createElement(Content, {
-	          "dangerouslySetInnerHTML": {
-	            __html: d
-	          }
-	        })));
-	      }
-	      return results;
-	    }).call(this));
-	  }
-	});
-
-	module.exports = MSList;
-
-
-/***/ },
-/* 251 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Column, ContentSection, Education, EducationItem, EducationItems, Grid, Header, Image, MSList, React, ReactDOM, Row, Segment, ref;
-
-	React = __webpack_require__(1);
-
-	ReactDOM = __webpack_require__(33);
-
-	ContentSection = __webpack_require__(233);
-
-	MSList = __webpack_require__(250);
-
-	ref = __webpack_require__(170), Grid = ref.Grid, Image = ref.Image, Column = ref.Column, Segment = ref.Segment, Header = ref.Header, Row = ref.Row;
-
-	EducationItems = [
-	  {
-	    url: 'http://www.berkeley.edu',
-	    logoName: 'cal_logo.gif',
-	    name: 'University of California, Berkeley',
-	    location: 'Berkeley, CA',
-	    position: 'Double Major: Computer Science & Mathematics',
-	    time: 'Fall 2012 - Spring 2015',
-	    description: ['Technical GPA: 3.67/4.0', '<i>Coursework:</i> Linear Algebra and Differential Equations (54), Intro to Analysis (104), Advanced Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs (61A), Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory (70), Efficient Algorithms and Intractable Problems (170), iOS Game Development (198), Intro to Digital Electronics (42), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Artificial Intelligence (188), Computer Security (161), Operating Systems and System Programming (162), Numerical Analysis (128A), Databases (186), Complex Analysis (185), Machine Learning (189)']
-	  }
-	];
-
-	Education = React.createClass({
-	  displayName: 'Education',
-	  render: function() {
-	    var i, item;
-	    return React.createElement(ContentSection, {
-	      "id": "education",
-	      "title": "Education",
-	      "icon": "student"
-	    }, React.createElement(Grid, {
-	      "className": "stackable vertically padded"
-	    }, (function() {
-	      var j, len, results;
-	      results = [];
-	      for (i = j = 0, len = EducationItems.length; j < len; i = ++j) {
-	        item = EducationItems[i];
-	        results.push(React.createElement(EducationItem, {
-	          "data": item,
-	          "key": i
-	        }));
-	      }
-	      return results;
-	    })()));
-	  }
-	});
-
-	module.exports = Education;
-
-	EducationItem = React.createClass({
-	  displayName: 'EducationItem',
-	  props: {
-	    data: React.PropTypes.object.isRequired
-	  },
-	  render: function() {
-	    return React.createElement(Row, null, React.createElement(Column, {
-	      "className": "three wide"
-	    }, React.createElement("a", {
-	      "href": this.props.data.url
-	    }, React.createElement(Image, {
-	      "className": "fluid rounded centered",
-	      "alt": this.props.data.logoName,
-	      "src": "images/companies/" + this.props.data.logoName
-	    }))), React.createElement(Column, {
-	      "className": "thirteen wide"
-	    }, React.createElement(Segment, {
-	      "className": "basic clearing"
-	    }, React.createElement(Header, {
-	      "className": "right floated small"
-	    }, this.props.data.time), React.createElement(Header, {
-	      "className": "left floated large"
-	    }, this.props.data.name, React.createElement("span", {
-	      "className": "at-symbol"
-	    }, " @ "), React.createElement("span", {
-	      "className": "location"
-	    }, this.props.data.location), React.createElement("div", {
-	      "className": "sub header"
-	    }, this.props.data.position))), React.createElement(MSList, {
-	      "items": this.props.data.description
-	    })));
-	  }
-	});
 
 
 /***/ }

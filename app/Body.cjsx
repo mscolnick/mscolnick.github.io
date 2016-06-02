@@ -7,6 +7,7 @@ Experience = require './Experience'
 Projects = require './Projects'
 Extracurricular = require './Extracurricular'
 Links = require './Links'
+Extras = require './Extras'
 Contact = require './Contact'
 
 { Item
@@ -32,6 +33,7 @@ Body = React.createClass
       <Projects />
       <Extracurricular />
       <Links />
+      <Extras />
       <Contact />
       <Footer />
     </div>
