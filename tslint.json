@@ -1,18 +1,56 @@
 
 {
-  "defaultSeverity": "error",
-  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
-  "jsRules": {},
-  "rules": {
-    "interface-name": false,
-    "semicolon": [true, "never"],
-    "object-literal-sort-keys": false,
-    "member-access": [false],
-    "max-classes-per-file": false,
-    "ordered-imports": [true],
-    "no-console": [false],
-    "no-var-requires": true,
-    "quotemark": [true, "double", "jsx-double"]
-  },
-  "rulesDirectory": []
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest",
+        "tslint-react",
+        "tslint-config-prettier",
+        "tslint-plugin-prettier"
+    ],
+    "rules": {
+        "linebreak-style": {
+            "options": ["LF"]
+        },
+        "max-classes-per-file": false,
+        "no-console": {
+            "options": ["log", "time", "timeEnd", "trace"]
+        },
+        "no-empty-interface": false,
+        "no-implicit-dependencies": {
+            "options": ["dev"]
+        },
+        "no-invalid-this": {
+            "options": ["check-function-in-method"]
+        },
+        "no-unnecessary-callback-wrapper": true,
+        "no-unnecessary-class": {
+            "options": [
+                "allow-empty-class",
+                "allow-constructor-only"
+            ]
+        },
+        "no-unnecessary-initializer": true,
+        "prefer-conditional-expression": false,
+        "object-literal-sort-keys": false,
+        "prettier": {
+            "options": {
+                "printWidth": 120,
+                "tabWidth": 4,
+                "trailingComma": "all"
+            }
+        },
+        "variable-name": {
+            "options": [
+                "allow-leading-underscore",
+                "allow-pascal-case",
+                "ban-keywords",
+                "check-format"
+            ]
+        }
+    },
+    "jsRules": {
+        "no-console": false,
+        "object-literal-sort-keys": false,
+        "trailing-comma": false
+    }
 }
