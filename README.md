@@ -1,8 +1,9 @@
-# Personal Wesbite
-
+# Personal Website
 
 ## Setup
 
-		git clone git@github.com:mscolnick/mscolnick.github.io.git
-		npm install
-		npm run watch
+```bash
+git clone git@github.com:mscolnick/mscolnick.github.io.git
+yarn
+yarn start
+```

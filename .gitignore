@@ -26,6 +26,8 @@
 *.sql
 *.sqlite
 
+.cache
+
 # OS generated files #
 ######################
 .DS_Store
@@ -43,9 +45,18 @@ Thumbs.db
 *.log
 *.lot
 *.fls
+*.ps
+*.dvi
 *.out
 *.toc
 *.fdb_latexmk
 
+# Project dependencies
+.cache
 node_modules
-bower_components
+yarn-error.log
+
+# Build directory
+/public
+.DS_Store
+.idea
