@@ -1,9 +1,3 @@
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 import React from "react"
 import { withPrefix } from "gatsby";
 
@@ -30,7 +24,7 @@ export default class  Navigation extends React.Component {
             <a className="toc item">
               <Icon className="sidebar" />
             </a>
-            {Array.from(Sections).map((section, i) => (
+            {Sections.map((section, i) => (
               <Item type="link" key={i} href={`#${section.toLowerCase()}`}>
                 {section}
               </Item>

@@ -35,7 +35,7 @@ export default class Body extends React.Component {
   render() {
     return (
       <div>
-        <Menu className="vertical inverted thin sidebar">
+        <Menu vertical={true} inverted={true} className="thin sidebar">
           {Sections.map((section, i) => (
             <Item type="link" key={i} href={`#${section.toLowerCase()}`}>
               {section}

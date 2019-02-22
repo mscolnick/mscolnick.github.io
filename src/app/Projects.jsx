@@ -1,9 +1,3 @@
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 import React from "react"
 import ContentSection from "./ContentSection"
 import MSList from "./MSList"
@@ -76,7 +70,7 @@ export default class Projects extends React.Component {
     return (
       <ContentSection id="projects" title="Projects" icon="lab">
         <Grid className="one column vertically padded">
-          {Array.from(ProjectItems).map((p, i) => (
+          {ProjectItems.map((p, i) => (
             <Project data={p} key={i} />
           ))}
         </Grid>

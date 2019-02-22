@@ -6,10 +6,7 @@ import "semantic-ui-less/semantic.less"
 import "./style.less"
 
 export const MainLayout: React.SFC = ({ children }) => (
-  <div
-    style={{
-    }}
-  >
+  <div>
     {children}
   </div>
 )

@@ -1,13 +1,7 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 import React from "react"
 import ContentSection from "./ContentSection"
-import MSList from "./MSList"
 
-const { Grid, GridColumn, Header, Embed } = require("semantic-ui-react");
+const { Grid, GridColumn, Embed } = require("semantic-ui-react");
 
 export default class  Extras extends React.Component {
   displayName ="Extras";
