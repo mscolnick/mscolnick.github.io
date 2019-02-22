@@ -164,7 +164,7 @@ export default class Experience extends React.Component {
     }
 }
 
-class ExperienceItem extends React.Component<{ data: any }> {
+class ExperienceItem extends React.PureComponent<{ data: any }> {
     public displayName = "ExperienceItem";
 
     public render() {
@@ -196,7 +196,7 @@ class ExperienceItem extends React.Component<{ data: any }> {
     }
 }
 
-class TechincalItem extends React.Component<{ data: any; color: SemanticCOLORS }> {
+class TechincalItem extends React.PureComponent<{ data: any; color: SemanticCOLORS }> {
     public displayName = "TechincalItem";
 
     public render() {

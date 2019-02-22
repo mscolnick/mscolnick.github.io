@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon, Item, List, ListContent } from "semantic-ui-react";
 
-export default class MSList extends React.Component<{ items: any[] }> {
+export default class MSList extends React.PureComponent<{ items: any[] }> {
     public displayName = "MSList";
 
     public render() {
