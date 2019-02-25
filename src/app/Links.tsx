@@ -1,7 +1,7 @@
 import React from "react";
 import ContentSection from "./ContentSection";
 
-import { Header, Icon, Item, List } from "semantic-ui-react";
+import { List } from "semantic-ui-react";
 
 export default class Links extends React.Component {
     public displayName = "Links";
@@ -10,42 +10,38 @@ export default class Links extends React.Component {
         return (
             <ContentSection id="links" title="Links" icon="linkify">
                 <List>
-                    <Item>
-                        <Header className="large">Media</Header>
+                    <List.Item>
+                        <List.Header>Media</List.Header>
                         <List>
-                            <Item
+                            <List.Item
                                 type="link"
                                 href="http://denver.cbslocal.com/2012/08/15/teenage-diabetic-works-to-find-cure/"
                             >
-                                <Icon className="right arrow" />
-                                {`Teenage Diabetic Works To Find Cure For Disease\
-`}
-                            </Item>
-                            <Item
+                                <List.Icon name="arrow right" />
+                                {`Teenage Diabetic Works To Find Cure For Disease`}
+                            </List.Item>
+                            <List.Item
                                 type="link"
                                 href="http://www.bloomberg.com/news/articles/2016-03-22/credit-suisse-cia-funded-palantir-build-joint-compliance-firm"
                             >
-                                <Icon className="right arrow" />
-                                {`Credit Suisse, CIA-Funded Palantir to Target Rogue Bankers\
-`}
-                            </Item>
+                                <List.Icon name="arrow right" />
+                                {`Credit Suisse, CIA-Funded Palantir to Target Rogue Bankers`}
+                            </List.Item>
                         </List>
-                    </Item>
-                    <Item>
-                        <Header className="large">Works</Header>
+                    </List.Item>
+                    <List.Item>
+                        <List.Header>Works</List.Header>
                         <List>
-                            <Item type="link" href="https://www.ocf.berkeley.edu/~scolnick/StockAnalysis/">
-                                <Icon className="right arrow" />
-                                {`Stock Analysis\
-`}
-                            </Item>
-                            <Item type="link" href="https://datalessapp.github.io/">
-                                <Icon className="right arrow" />
-                                {`Dataless\
-`}
-                            </Item>
+                            <List.Item type="link" href="https://www.ocf.berkeley.edu/~scolnick/StockAnalysis/">
+                                <List.Icon name="arrow right" />
+                                {`Stock Analysis`}
+                            </List.Item>
+                            <List.Item type="link" href="https://datalessapp.github.io/">
+                                <List.Icon name="arrow right" />
+                                {`Dataless`}
+                            </List.Item>
                         </List>
-                    </Item>
+                    </List.Item>
                 </List>
             </ContentSection>
         );

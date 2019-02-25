@@ -1,8 +1,3 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 import { withPrefix } from "gatsby";
 import React from "react";
 import ContentSection from "./ContentSection";
@@ -14,17 +9,20 @@ export default class About extends React.Component {
 
     public render() {
         return (
-            <ContentSection id="about" title="About Me" icon="dashboard">
-                <Grid className="stackable two column middle aligned vertically padded">
-                    <GridColumn className="four wide">
+            <ContentSection id="about" title="About Me" icon="user">
+                <Grid verticalAlign={"middle"} columns={2} padded={"vertically"} stackable={true}>
+                    <GridColumn width={4}>
                         <Image
-                            className="medium rounded centered"
-                            alt="MylesScolnick"
-                            src={withPrefix("images/portrait.jpg")}
+                            circular={true}
+                            bordered={true}
+                            centered={true}
+                            size="medium"
+                            alt="mscolnick"
+                            src={withPrefix("images/myles-bw.jpeg")}
                         />
                     </GridColumn>
-                    <GridColumn className="twelve wide">
-                        <Container className="center aligned">
+                    <GridColumn width={12}>
+                        <Container textAlign={"center"}>
                             <p>
                                 Hello, world! My name is Myles Scolnick. I graduated from the University of California,
                                 Berkeley, with degrees in Computer Science and Mathematics. I am currently a software

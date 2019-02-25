@@ -1,17 +1,6 @@
 import { withPrefix } from "gatsby";
 import React from "react";
-import {
-    Grid,
-    GridColumn,
-    GridRow,
-    Header,
-    Image,
-    Item,
-    List,
-    Progress,
-    Segment,
-    SemanticCOLORS,
-} from "semantic-ui-react";
+import { Grid, Header, Image, Item, List, Progress, Segment, SemanticCOLORS } from "semantic-ui-react";
 import ContentSection from "./ContentSection";
 import MSList from "./MSList";
 
@@ -27,45 +16,25 @@ const ProgressType: SemanticCOLORS[] = [
     "purple",
     "pink",
 ];
-const Tools = [
-    "Git",
-    "Vim",
-    "Eclipse",
-    "AWS",
-    "Processing",
-    "Bootstrap",
-    "Hadoop",
-    "Xcode",
-    "Twilio",
-    "CMake",
-    "OpenCV",
-    "OpenMP",
-    "SSE Intrinsics",
-    "SQLite",
-    "LaTeX",
-    "jQuery",
-    "VirtualBox",
-];
+const Tools = ["VSCode", "Git", "Webpack", "Node", "Docker", "Circle", "Conjure", "TS-AST"];
 
-const TechincalItems = [
-    { name: "Python", progress: 95 },
-    { name: "Java", progress: 95 },
-    { name: "HTML/CSS", progress: 90 },
-    { name: "Coffeescript/Javascript", progress: 70 },
-    { name: "Swift/Obective-C", progress: 70 },
-    { name: "C", progress: 70 },
-    { name: "Bash Scripting", progress: 70 },
-    { name: "Matlab", progress: 60 },
-];
+const TechincalItems = [{ name: "Typescript/React", progress: 95 }, { name: "Java", progress: 70 }];
 const ExperienceItems = [
     {
         url: "https://www.palantir.com",
         logoName: "palantir.png",
         name: "Palantir Technologies",
-        location: "around the world",
-        position: "Incoming Software Engineer",
-        time: "Summer 2016 - Present",
-        description: [],
+        location: "New York, NY | London, UK",
+        position: "Software Engineer",
+        time: "June 2016 - Present",
+        description: [
+            "Worked on the initial implementation and methods for providing an object and relational platform for datasets",
+            "Created an analytical application for investigative and decision based workflows for operational users",
+            "Designed a plugin architecture for deployments to create customer specific plugins to inject into our applications",
+            "Developed a tool for managing manufacturing defects and running defect analysis / root cause analysis (RCA)",
+            "Contributed to building systems and methods for determining relationships between defects",
+            "Built some of the initial custom applications during the early development of our aviation vertical",
+        ],
     },
     {
         url: "https://www.palantir.com",
@@ -75,7 +44,10 @@ const ExperienceItems = [
         position: "Software Engineer Intern",
         time: "Summer 2015",
         description: [
-            'Worked on adding new improvements and features to Palantir\'s <a href="https://www.palantir.com/solutions/trader-oversight/">trader oversight solution</a>',
+            <>
+                Worked on adding new improvements and features to Palantir's{" "}
+                <a href="https://www.palantir.com/solutions/trader-oversight/">trader oversight solution</a>
+            </>,
             "Developed a new understanding of Postgres Full Text Search, large-scale web applications, build automation tools, and dependency management",
         ],
     },
@@ -91,19 +63,19 @@ const ExperienceItems = [
             "Acquired great insight into the tech world and furthered developed my research capabilities with real business implications",
         ],
     },
-    {
-        url: "https://www.palantir.com",
-        logoName: "palantir.png",
-        name: "Palantir Technologies",
-        location: "Palo Alto, CA",
-        position: "Product Quality Engineer Intern",
-        time: "Summer 2014",
-        description: [
-            "Developed new management tools to deploy a subset of Palantir software with increased reliability and efficiency",
-            "Gained large project experience, increased Java/Shell skills, as well as team collaboration and other proficiencies",
-            "Created tests plans and implemented back end (BE) automation tests to ensure project stability from code changes",
-        ],
-    },
+    // {
+    //     url: "https://www.palantir.com",
+    //     logoName: "palantir.png",
+    //     name: "Palantir Technologies",
+    //     location: "Palo Alto, CA",
+    //     position: "Product Quality Engineer Intern",
+    //     time: "Summer 2014",
+    //     description: [
+    //         "Developed new management tools to deploy a subset of Palantir software with increased reliability and efficiency",
+    //         "Gained large project experience, increased Java/Shell skills, as well as team collaboration and other proficiencies",
+    //         "Created tests plans and implemented back end (BE) automation tests to ensure project stability from code changes",
+    //     ],
+    // },
     {
         url: "http://www.redbull.com/us/en",
         logoName: "redbull.png",
@@ -117,19 +89,19 @@ const ExperienceItems = [
             "Seeked opportunities to develop Red Bull’s brand profile, image and credibility on and around campus within the student market",
         ],
     },
-    {
-        url: "http://www.ucdenver.edu/academics/colleges/medicalschool/centers/WebbWaring/Pages/WagnerLab.aspx",
-        logoName: "cu_logo.png",
-        name: "Webb-Warring Lab of Immunology",
-        location: "University of Colorado, Denver",
-        position: "Immunology Intern",
-        time: "Summer 2011",
-        description: [
-            "Worked with a team to find a cure for Type 1 Diabetes in mice by examining the roles of auto-reactive T-cells in diabetes",
-            "Studied APC's, CD4's, and V-alpha chains (1-19) to developed a correlation between age of mice and beta-islet configuration",
-            "Analyzed gel electrophoresis samples to separate protein solution to determine V-alpha chains present in mice pancreas",
-        ],
-    },
+    // {
+    //     url: "http://www.ucdenver.edu/academics/colleges/medicalschool/centers/WebbWaring/Pages/WagnerLab.aspx",
+    //     logoName: "cu_logo.png",
+    //     name: "Webb-Warring Lab of Immunology",
+    //     location: "University of Colorado, Denver",
+    //     position: "Immunology Intern",
+    //     time: "Summer 2011",
+    //     description: [
+    //         "Worked with a team to find a cure for Type 1 Diabetes in mice by examining the roles of auto-reactive T-cells in diabetes",
+    //         "Studied APC's, CD4's, and V-alpha chains (1-19) to developed a correlation between age of mice and beta-islet configuration",
+    //         "Analyzed gel electrophoresis samples to separate protein solution to determine V-alpha chains present in mice pancreas",
+    //     ],
+    // },
 ];
 
 export default class Experience extends React.Component {
@@ -142,7 +114,7 @@ export default class Experience extends React.Component {
                     {ExperienceItems.map((item, i) => {
                         return <ExperienceItem data={item} key={i} />;
                     })}
-                    <GridColumn className="sixteen wide">
+                    <Grid.Column className="sixteen wide">
                         <Segment className="piled">
                             <Header>Technical</Header>
                             {TechincalItems.map((item, i) => {
@@ -157,7 +129,7 @@ export default class Experience extends React.Component {
                                 })}
                             </List>
                         </Segment>
-                    </GridColumn>
+                    </Grid.Column>
                 </Grid>
             </ContentSection>
         );
@@ -169,8 +141,8 @@ class ExperienceItem extends React.PureComponent<{ data: any }> {
 
     public render() {
         return (
-            <GridRow>
-                <GridColumn className="three wide">
+            <Grid.Row>
+                <Grid.Column className="three wide">
                     <a href={this.props.data.url}>
                         <Image
                             className="fluid rounded centered"
@@ -178,8 +150,8 @@ class ExperienceItem extends React.PureComponent<{ data: any }> {
                             src={withPrefix(`images/companies/${this.props.data.logoName}`)}
                         />
                     </a>
-                </GridColumn>
-                <GridColumn className="thirteen wide">
+                </Grid.Column>
+                <Grid.Column className="thirteen wide">
                     <Segment className="basic clearing">
                         <Header className="right floated small">{this.props.data.time}</Header>
                         <Header className="left floated large">
@@ -190,8 +162,8 @@ class ExperienceItem extends React.PureComponent<{ data: any }> {
                         </Header>
                     </Segment>
                     <MSList items={this.props.data.description} />
-                </GridColumn>
-            </GridRow>
+                </Grid.Column>
+            </Grid.Row>
         );
     }
 }
@@ -202,10 +174,10 @@ class TechincalItem extends React.PureComponent<{ data: any; color: SemanticCOLO
     public render() {
         return (
             <Grid>
-                <GridColumn className="three wide">{this.props.data.name}</GridColumn>
-                <GridColumn className="thirteen wide">
+                <Grid.Column className="three wide">{this.props.data.name}</Grid.Column>
+                <Grid.Column className="thirteen wide">
                     <Progress color={this.props.color} percent={this.props.data.progress} />
-                </GridColumn>
+                </Grid.Column>
             </Grid>
         );
     }

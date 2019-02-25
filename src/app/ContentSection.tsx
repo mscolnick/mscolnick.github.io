@@ -8,7 +8,7 @@ export default class ContentSection extends React.PureComponent<{ id: string; ic
 
     public render() {
         return (
-            <Segment className="basic vertical stripe" id={this.props.id}>
+            <Segment vertical={true} className="basic stripe" id={this.props.id}>
                 <Container>
                     <ContentHeader icon={this.props.icon} title={this.props.title} />
                     {this.props.children}

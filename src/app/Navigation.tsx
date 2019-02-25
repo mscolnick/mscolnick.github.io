@@ -1,9 +1,9 @@
 import { withPrefix } from "gatsby";
 import React from "react";
 
-import { Container, Icon, Item, Menu, Segment } from "semantic-ui-react";
+import { Container, Icon, Menu, Segment } from "semantic-ui-react";
 
-const Sections = ["About", "Education", "Experience", "Projects", "Involvement", "Links", "Contact"];
+const SECTIONS = ["About", "Education", "Experience", "Projects", "Involvement", "Links", "Contact"];
 
 export default class Navigation extends React.Component {
     public displayName = "Navigation";
@@ -16,17 +16,17 @@ export default class Navigation extends React.Component {
                         <a className="toc item">
                             <Icon className="sidebar" />
                         </a>
-                        {Sections.map((section, i) => (
-                            <Item type="link" key={i} href={`#${section.toLowerCase()}`}>
+                        {SECTIONS.map((section, i) => (
+                            <Menu.Item type="link" key={i} href={`#${section.toLowerCase()}`}>
                                 {section}
-                            </Item>
+                            </Menu.Item>
                         ))}
                         <div className="right menu">
-                            <Item>
+                            <Menu.Item>
                                 <a className="ui button blue" href={withPrefix("resume_tex/resume.pdf")}>
                                     <i className="file pdf outline icon" /> Print
                                 </a>
-                            </Item>
+                            </Menu.Item>
                         </div>
                     </Menu>
                 </Container>

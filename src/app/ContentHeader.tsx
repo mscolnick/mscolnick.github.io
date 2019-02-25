@@ -6,7 +6,7 @@ export default class ContentHeader extends React.PureComponent<{ icon: string; t
 
     public render() {
         return (
-            <Divider className="horizontal huge header">
+            <Divider horizontal={true} className="huge header">
                 <Icon className={`${this.props.icon}`} />
                 <HeaderContent>{this.props.title}</HeaderContent>
             </Divider>

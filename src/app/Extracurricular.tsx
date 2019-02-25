@@ -13,6 +13,12 @@ interface IItem {
 
 const ExItems: IItem[] = [
     {
+        name: "JDRF One Walk",
+        position: "Team Captain",
+        time: "Fall 2018",
+        description: ["Raised $3,000 for the JDRF Type 1 Diabetes walk to help end type 1 diabetes"],
+    },
+    {
         name: "Cal Men’s Club Lacrosse Team",
         position: "MCLA D-1 Student Athlete / Lead Web Designer",
         time: "Fall 2012 - 2015",
@@ -20,22 +26,22 @@ const ExItems: IItem[] = [
             "Headed website for a three-month long campaign by the team that had raised over $250,000 in funding",
         ],
     },
-    {
-        name: "Phi Gamma Delta Fraternity",
-        position: "Vice President/Treasurer, Scholarship Chair",
-        time: "Fall 2012 - 2015",
-        description: [
-            "Oversaw and budgeted $150,000 and carried out chapter affairs; Promoted scholarship and organized resume workshops",
-        ],
-    },
-    {
-        name: "JDRF (Juvenile Diabetes Research Foundation)",
-        position: "Team captain for JDRF",
-        time: "Summer 2008 - 2011",
-        description: [
-            "Raised over $10,000 for JDRF’s Walk to Cure Diabetes and received the Golden Sneaker Award for excellence in fundraising",
-        ],
-    },
+    // {
+    //     name: "Phi Gamma Delta Fraternity",
+    //     position: "Vice President/Treasurer, Scholarship Chair",
+    //     time: "Fall 2012 - 2015",
+    //     description: [
+    //         "Oversaw and budgeted $150,000 and carried out chapter affairs; Promoted scholarship and organized resume workshops",
+    //     ],
+    // },
+    // {
+    //     name: "JDRF (Juvenile Diabetes Research Foundation)",
+    //     position: "Team captain for JDRF",
+    //     time: "Summer 2008 - 2011",
+    //     description: [
+    //         "Raised over $10,000 for JDRF’s Walk to Cure Diabetes and received the Golden Sneaker Award for excellence in fundraising",
+    //     ],
+    // },
 ];
 
 export default class Extracurricular extends React.Component {
@@ -45,7 +51,7 @@ export default class Extracurricular extends React.Component {
         return (
             <ContentSection id="involvement" title="Involvement" icon="map">
                 <Grid className="one column vertically padded">
-                    {Array.from(ExItems).map((item, i) => (
+                    {ExItems.map((item, i) => (
                         <ExtracurricularItem data={item} key={i} />
                     ))}
                 </Grid>

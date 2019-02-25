@@ -1,6 +1,6 @@
 import { withPrefix } from "gatsby";
 import React from "react";
-import { Grid, GridColumn, GridRow, Header, Image, Segment } from "semantic-ui-react";
+import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import ContentSection from "./ContentSection";
 import MSList from "./MSList";
 
@@ -11,7 +11,7 @@ interface IItem {
     location: string;
     position: string;
     time: string;
-    description: string[];
+    description: React.ReactNode[];
 }
 
 const EducationItems: IItem[] = [
@@ -24,7 +24,15 @@ const EducationItems: IItem[] = [
         time: "Fall 2012 - Spring 2015",
         description: [
             "Technical GPA: 3.67/4.0",
-            "<i>Coursework:</i> Linear Algebra and Differential Equations (54), Intro to Analysis (104), Advanced Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs (61A), Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory (70), Efficient Algorithms and Intractable Problems (170), iOS Game Development (198), Intro to Digital Electronics (42), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Artificial Intelligence (188), Computer Security (161), Operating Systems and System Programming (162), Numerical Analysis (128A), Databases (186), Complex Analysis (185), Machine Learning (189)",
+            <>
+                <i>Coursework:</i> Linear Algebra and Differential Equations (54), Intro to Analysis (104), Advanced
+                Linear Algebra (110), Intro to Abstract Algebra (113), Structure and Interpretation of Computer Programs
+                (61A), Data Structures (61B), Machine Structures (61C), Discrete Mathematics and Probability Theory
+                (70), Efficient Algorithms and Intractable Problems (170), iOS Game Development (198), Intro to Digital
+                Electronics (42), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194),
+                Artificial Intelligence (188), Computer Security (161), Operating Systems and System Programming (162),
+                Numerical Analysis (128A), Databases (186), Complex Analysis (185), Machine Learning (189)
+            </>,
         ],
     },
 ];
@@ -36,7 +44,7 @@ export default class Education extends React.Component {
         return (
             <ContentSection id="education" title="Education" icon="student">
                 <Grid className="stackable vertically padded">
-                    {Array.from(EducationItems).map((item, i) => (
+                    {EducationItems.map((item, i) => (
                         <EducationItem data={item} key={i} />
                     ))}
                 </Grid>
@@ -50,8 +58,8 @@ class EducationItem extends React.Component<{ data: IItem }> {
 
     public render() {
         return (
-            <GridRow>
-                <GridColumn className="three wide">
+            <Grid.Row>
+                <Grid.Column className="three wide">
                     <a href={this.props.data.url}>
                         <Image
                             className="fluid rounded centered"
@@ -59,8 +67,8 @@ class EducationItem extends React.Component<{ data: IItem }> {
                             src={withPrefix(`images/companies/${this.props.data.logoName}`)}
                         />
                     </a>
-                </GridColumn>
-                <GridColumn className="thirteen wide">
+                </Grid.Column>
+                <Grid.Column className="thirteen wide">
                     <Segment className="basic clearing">
                         <Header className="right floated small">{this.props.data.time}</Header>
                         <Header className="left floated large">
@@ -71,8 +79,8 @@ class EducationItem extends React.Component<{ data: IItem }> {
                         </Header>
                     </Segment>
                     <MSList items={this.props.data.description} />
-                </GridColumn>
-            </GridRow>
+                </Grid.Column>
+            </Grid.Row>
         );
     }
 }

@@ -9,11 +9,15 @@ const SocialItems = [
     { name: "linkedin", link: "https://www.linkedin.com/in/mscolnick" },
     { name: "github", link: "https://github.com/mscolnick" },
     { name: "quora", link: "http://www.quora.com/Myles-Scolnick" },
-    { name: "twitter", link: "https://twitter.com/TheMylesFiles" },
-    { name: "skype", link: "skype:MylesScolnick?call" },
+    // { name: "twitter", link: "https://twitter.com/TheMylesFiles" },
+    // { name: "skype", link: "skype:MylesScolnick?call" },
 ];
 
-const ContactInfo = ["+1 (303)–250–0788", 'Email: <a href="mailto:mscolnick@gmail.com">mscolnick@gmail.com</a>'];
+const ContactInfo = [
+    <>
+        Email: <a href="mailto:mscolnick@gmail.com">mscolnick@gmail.com</a>
+    </>,
+];
 
 export default class Contact extends React.Component {
     public displayName = "Contact";
