@@ -1,0 +1,59 @@
+:root {
+  --red-color: rgba(244, 67, 54, 1);
+  --blue-color: rgba(33, 150, 243, 1);
+}
+
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+h2 {
+  font-family: 'Prompt', sans-serif;
+  font-size: 64px;
+  color: rgb(234, 234, 234);
+}
+
+.flex-center {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-3d {
+  cursor: pointer;
+  padding: 10px;
+  animation: icon3d 200ms 2;
+  color: rgb(234, 234, 234);
+  text-decoration: none;
+}
+
+.icon-3d:hover {
+  animation: icon3d 200ms infinite;
+}
+
+@keyframes icon3d {
+  0% {
+    text-shadow: 5px 4px var(--red-color), -5px -6px var(--blue-color);
+  }
+  25% {
+    text-shadow: -5px -6px var(--red-color), 5px 4px var(--blue-color);
+  }
+  50% {
+    text-shadow: 5px -4px var(--red-color), -8px 4px var(--blue-color);
+  }
+  75% {
+    text-shadow: -8px -4px var(--red-color), -5px -4px var(--blue-color);
+  }
+  100% {
+    text-shadow: -5px 0 var(--red-color), 5px -4px var(--blue-color);
+  }
+}
