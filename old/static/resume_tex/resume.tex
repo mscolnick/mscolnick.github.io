@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper,sans]{moderncv}
+\documentclass[12pt,a4paper,sans]{moderncv}
 
 % \usepackage[margin=0.3in]{geometry}
 % \usepackage[scale=0.9,top=1.2cm]{geometry}
@@ -23,34 +23,44 @@
 
 \begin{document}
 \maketitle
-% \vspace*{-8mm}
-
-%----------------------------------------------------------------------------------
-
-\section{EDUCATION}
-
-\cventry{Aug 2012 - Dec 2015}{Double Major: Computer Science \& Applied Mathematics}{\large University of California, Berkeley}{Technical GPA: 3.67/4.0}{}{
-	\footnotesize{
-		\vspace*{2mm}
-		\textbf{Favorite courses:} Efficient Algorithms and Intractable Problems (170), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Numerical Analysis (128A), Complex Analysis (185)
-	}
-}
-\vspace*{1mm}
-
-\cvline{Programming}{\small Typescript/React, Java}
-
-\vspace*{1mm}
-\cvline{Tools}{\small VSCode, Git, Webpack, Node, Docker, Circle, Conjure, TS-AST, \LaTeX{}}
+\vspace*{-8mm}
 
 %----------------------------------------------------------------------------------
 
 \section{EXPERIENCE}
-\cventry{June 2016 - Present}{Software Engineer, Forward Deployed Engineer}{Palantir Technologies}{New York, NY | London, UK}{}{
+
+\cventry{Feb 2020 - Present}{Software Engineer}{Cloud Kitchens (CSS)}{New York, NY}{}{
 	\begin{itemize}%
+		\item Web Platform Lead
+		      \begin{itemize}%
+		      	\item Leading web platform, settings best-practices and standards
+		      	\item Creating low-code fault-tolerant workflow builder (built on Cadence)
+		      	\item Building monorepo tooling with Bazel
+		      	\item Building micro-frontend architectures
+		      	\item Building code-mods for TypeScript/React/GraphQL
+		      	\item Building SDKs for internal app development
+		      	\item Helping maintain GraphQL gateway
+		      \end{itemize}
+		\item Virtual Branding (futurefoods.io)
+		      \begin{itemize}%
+		      	\item Built internal tools to manage onboarding lifecycle of Virtual Brands
+		      	\item Built external tools for self-serve Virtual Brand onboarding
+		      \end{itemize}
+	\end{itemize}
+}
+
+\cventry{June 2016 - Jan 2020}{Software Engineer, Forward Deployed Engineer}{Palantir Technologies}{New York, NY | London, UK / }{}{
+	\begin{itemize}%
+		\item Lead Software Engineer - Workshop (Foundry)
+		      \begin{itemize}%
+		      	\item Tech lead Workshop, a no-code application builder
+		      	\item Most deployed product within Foundry and most used product
+		      	\item Designed a scalable plugin architecture
+		      \end{itemize}
 		\item Software Engineer - Foundry
 		      \begin{itemize}%
-		      	\item Worked on the initial implementation and methods for providing an object and relational platform for datasets
-		      	\item Created an analytical application for investigative and decision based workflows for operational users
+		      	\item Worked on the initial implementation and methods for providing an object and relational platform for datasets (Ontology)
+		      	\item Created an analytical application for investigative and decision based workflows for operational users (Object 360)
 		      	\item Designed a plugin architecture for deployments to create customer specific plugins to inject into our applications
 		      \end{itemize}
 		\item Forward Deployed Engineer - Aviation
@@ -62,17 +72,17 @@
 	\end{itemize}
 }
 
-\cventry{Summer 2015}{Software Engineer Intern}{Palantir Technologies}{Palo Alto, CA}{}{
-	\begin{itemize}%
-		\item Worked on adding new improvements and features to Palantir's \href{https://www.palantir.com/solutions/trader-oversight}{trader oversight solution}
-		\item Developed a new understanding of Postgres Full-Text Search, large-scale web app, build automation tools, and dependency management
-	\end{itemize}}
+% \cventry{Summer 2015}{Software Engineer Intern}{Palantir Technologies}{Palo Alto, CA}{}{
+% 	\begin{itemize}%
+% 		\item Worked on adding new improvements and features to Palantir's \href{https://www.palantir.com/solutions/trader-oversight}{trader oversight solution}
+% 		\item Developed a new understanding of Postgres Full-Text Search, large-scale web app, build automation tools, and dependency management
+% 	\end{itemize}}
 
-\cventry{Spring 2015}{Part-Time Extern}{Dropbox}{Berkeley, CA}{}{
-	\begin{itemize}%
-		\item Conducted research on students to develop insights about student technology usage and trends
-		\item Acquired great insight into the tech world and furthered developed my research capabilities with real business implications
-	\end{itemize}}
+% \cventry{Spring 2015}{Part-Time Extern}{Dropbox}{Berkeley, CA}{}{
+% 	\begin{itemize}%
+% 		\item Conducted research on students to develop insights about student technology usage and trends
+% 		\item Acquired great insight into the tech world and furthered developed my research capabilities with real business implications
+% 	\end{itemize}}
 
 % \cventry{Summer 2014}{Product Quality Engineer Intern}{Palantir Technologies}{Palo Alto, CA}{}{\normalsize
 % \begin{itemize}%
@@ -90,21 +100,39 @@
 
 %----------------------------------------------------------------------------------
 
-\section{PERSONAL PROJECTS}
+\section{EDUCATION}
 
-\cventry{Fall 2015}{Python, NLTK}{\href{http://mscolnick.github.io/resources/radius-report.pdf}{NAICS Classifier}}{}{}{\normalsize
-	\begin{itemize}%
-		\item Built a natural language model to algorithmically determine the best NAICS code for a given small business
-		\item Received second in the Radius Collider Competition (through UC Berkeley's Sutardja Center for Entrepreneurship \& Technology)
-		\item Incorporated text cleaning, data augmentation, TF-IDF, wordnet, neural embeddings and cross-validation to improve accuracy
-	\end{itemize}}
+\cventry{Aug 2012 - Dec 2015}{Double Major: Computer Science \& Applied Mathematics}{\large University of California, Berkeley}{Technical GPA: 3.67/4.0}{}{
+	\footnotesize{
+		\vspace*{2mm}
+		\textbf{Favorite courses:} Efficient Algorithms and Intractable Problems (170), Engineering Entrepreneurship (IEOR190), Engineering Parallel Software (194), Numerical Analysis (128A), Complex Analysis (185)
+	}
+}
+\vspace*{1mm}
 
-\cventry{Fall 2015}{Python, Flask, Twilio, Android/Java, AWS EC2}{\href{https://datalessapp.github.io/}{Dataless}}{}{}{\normalsize
-	\begin{itemize}%
-		\item Built an application on Android to get remote information and internet access without using data and only using SMS
-		\item Created a protocol with SMS to simulate network packets capable of handling dropped packets and out of order packets
-		\item Won \textit{Best Hack at Berkeley} from FreeVentures and \textit{Best use of AWS} from Amazon at \href{http://www.calhacks.io/}{Cal Hacks 2.0}
-	\end{itemize}}
+\cvline{Programming}{\small TypeScript/React, Java, Bazel, GraphQL, Micro-Frontends}
+
+\vspace*{1mm}
+\cvline{Tools}{\small VSCode, Git, Vite, Node, Docker, TS-AST, \LaTeX{}}
+
+
+%----------------------------------------------------------------------------------
+
+% \section{PERSONAL PROJECTS}
+
+% \cventry{Fall 2015}{Python, NLTK}{\href{http://mscolnick.github.io/resources/radius-report.pdf}{NAICS Classifier}}{}{}{\normalsize
+% 	\begin{itemize}%
+% 		\item Built a natural language model to algorithmically determine the best NAICS code for a given small business
+% 		\item Received second in the Radius Collider Competition (through UC Berkeley's Sutardja Center for Entrepreneurship \& Technology)
+% 		\item Incorporated text cleaning, data augmentation, TF-IDF, wordnet, neural embeddings and cross-validation to improve accuracy
+% 	\end{itemize}}
+
+% \cventry{Fall 2015}{Python, Flask, Twilio, Android/Java, AWS EC2}{\href{https://datalessapp.github.io/}{Dataless}}{}{}{\normalsize
+% 	\begin{itemize}%
+% 		\item Built an application on Android to get remote information and internet access without using data and only using SMS
+% 		\item Created a protocol with SMS to simulate network packets capable of handling dropped packets and out of order packets
+% 		\item Won \textit{Best Hack at Berkeley} from FreeVentures and \textit{Best use of AWS} from Amazon at \href{http://www.calhacks.io/}{Cal Hacks 2.0}
+% 	\end{itemize}}
 
 % \cventry{Spring 2015}{Python, Flask, SQLite, Jinja, HTML/CSS/JS}{\href{https://www.ocf.berkeley.edu/~scolnick/StockAnalysis}{Stock Analysis}}{}{}{\normalsize
 % \begin{itemize}%
@@ -131,15 +159,16 @@
 
 \section{ACTIVITIES}
 
-\cventry{Fall 2018}{JDRF One Walk}{Team Captain}{}{}{\normalsize
-	\begin{itemize}%
-        \item Raised \$3,000 for the JDRF Type 1 Diabetes walk to help end type 1 diabetes
-	\end{itemize}}
+% \cventry{Fall 2018}{JDRF One Walk}{Team Captain}{}{}{\normalsize
+% 	\begin{itemize}%
+%         \item Raised \$3,000 for the JDRF Type 1 Diabetes walk to help end type 1 diabetes
+% 	\end{itemize}}
 
-\cventry{2012 -- 2015}{MCLA D-1 Student Athlete \& Lead Web Designer}{Cal Men's Club Lacrosse Team}{}{}{\normalsize
-	\begin{itemize}%
-		\item Headed website for a three-month long campaign by the team that had raised over \$250,000 in funding
-	\end{itemize}}
+\cventry{2012 -- 2015}{MCLA D-1 Student Athlete \& Lead Web Designer}{Cal Men's Club Lacrosse Team}{}{}
+% {\normalsize
+% 	\begin{itemize}%
+% 		\item Headed website for a three-month long campaign by the team that had raised over \$250,000 in funding
+% 	\end{itemize}}
 
 % \cventry{Fall 2012 -- 2015}{Former Vice President/Treasurer \& Scholarship Chair}{Phi Gamma Delta Fraternity}{}{}{\normalsize
 % \begin{itemize}%
